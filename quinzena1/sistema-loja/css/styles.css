@@ -3,3 +3,74 @@
     padding: 0;
 }
 
+
+
+.mensagem{
+    background-color: blueviolet;
+   
+}
+
+.mensagem h1{
+    padding: 15px 0 0 20px;
+    
+}
+
+.mensagem p{
+    text-align: right;
+    font-size: 20px;
+    padding-right: 15px;
+    padding-bottom: 5px;
+    color: darkgray;
+    
+}
+
+.links-menu{
+    background-color: cyan;
+    padding: 20px ;
+}
+
+a {
+   color: rgb(208, 209, 199);
+   text-decoration: none;
+   background-color: rgb(14, 4, 53);
+   margin: 0 100px;
+   padding: 10px;
+}
+
+a:hover{
+    color: red;
+}
+
+.corpo{
+    background-color: #ddd;
+}
+
+.corpo h1{
+    text-align: center;
+    padding: 20px 0;
+}
+
+.corpo p{
+    padding-left: 20px;
+    padding-bottom: 10px;
+}
+
+footer{
+    padding-top: 20px;
+    
+}
+
+footer > p{
+     text-align: center;
+     font-size: 22px;
+}
+
+.redes-sociais{
+    margin-left: 100px;
+}
+#face, #instagram, #twitter {
+    width: 150px ;
+    height: 150px;
+    margin: 30px 100px;
+    
+}
