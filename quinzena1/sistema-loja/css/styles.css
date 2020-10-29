@@ -106,11 +106,12 @@ form {
     padding-bottom: 30px;
     border: 1px solid blue;
     font-size: 18px;
+    background-color: rgb(157, 14, 223);
     
 }
 
 form div {
-    padding: 0 0 15px 40px;
+    padding: 10px 0 15px 40px;
 
 }
 
