@@ -11,6 +11,17 @@
  * 
  */
 
+ //mensagem de boas vindas ao jogo
  console.log("Bem Vindo ao jogo de BlackJack!");
+
+
+ //mensagem solicitando ao usuário se ele quer jogar ou não
+ if (confirm("Gostaria de iniciar uma nova rodada?")){
+   //iniciar rodada se usuário digitar ok
+  
+ } else {
+    //mensagem de finalização do jogo se o usuário digitar cancelar
+    console.log("O jogo acabou");
+ }
 
  
