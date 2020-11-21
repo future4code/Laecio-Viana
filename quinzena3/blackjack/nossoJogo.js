@@ -11,4 +11,6 @@
  * 
  */
 
+ console.log("Bem Vindo ao jogo de BlackJack!");
+
  
