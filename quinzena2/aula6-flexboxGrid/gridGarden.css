@@ -1,0 +1,91 @@
+/* etapa 1
+grid-column-start:3;
+
+etapa 2
+grid-column-start:5;
+
+etapa3
+grid-column-end:4;
+
+etapa 4
+grid-column-end:2;
+
+etapa 5
+grid-column-end: -2;
+
+etapa 6
+grid-column-start: -3;
+
+etapa 7
+grid-column-end:span 2;
+
+etapa 8
+grid-column-end: span 5;
+
+etapa 9
+grid-column-start: span 3;
+
+etapa 10
+grid-column: 4 / 6;
+
+etapa 11
+grid-column: 2 / span 3;
+
+etapa 12
+grid-row-start:3;
+
+etapa 13
+grid-row: 3 / 6;
+
+etapa 14
+grid-column: 2;
+grid-row: 5;
+
+etapa 15
+grid-column: 2 / span 5;
+grid-row : 1 / span 5;
+
+
+etapa 16
+grid-area: 1 / 2 / 4 / 6;
+
+etapa 17
+grid-area: 2 / 3 / 5 / 6;
+
+etapa 18
+order:3;
+
+etapa 19
+
+order:-1;
+
+etapa 20
+grid-template-columns:50%;
+
+etapa 21
+grid-template-columns: repeat(8,12.5%);
+
+etapa 22
+grid-template-columns: 100px 3em 40%;
+
+etapa 23
+grid-template-columns: 1fr 5fr;
+
+etapa 24
+
+grid-template-columns:50px 1fr 1fr 1fr 50px;
+
+etapa 25
+
+grid-template-columns: 75px 3fr 2fr;
+
+etapa 26
+
+
+etapa 27
+grid-template:60% / 200px;
+
+
+etapa 28
+
+ */
