@@ -42,11 +42,11 @@ Esse código pega um número digitado pelo usuário  e verifica se ele é par ou
           console.log("Você pode dirigir");
         } else {
           console.log("Você não pode dirigir");
-        } 
+        }  
 
 
 
-             //          EXERCICIO 5
+            //          EXERCICIO 5
 
            const turnoEstudo = prompt("Digite M para matutino , V para vespertino ou N para noturno").toUpperCase();
 
@@ -60,7 +60,7 @@ Esse código pega um número digitado pelo usuário  e verifica se ele é par ou
              console.log("Não existe esse  turno");
            }
  
-
+         
 
           //           EXERCICIO 6
 
