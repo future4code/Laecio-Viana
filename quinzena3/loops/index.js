@@ -27,3 +27,65 @@
   000
   0000 */
    
+//EXERCICIO 3
+
+//resposta item a) 
+const arrayOriginal = [55,70,23,46,12,97,102,33,48,69, 11, 53,73 , 37];
+
+console.log("// resposta item a");
+for (let numero of arrayOriginal){
+    console.log(numero);
+} 
+
+
+//resposta item b)
+console.log("// resposta item b");
+for (let numero of arrayOriginal){
+   console.log(numero / 10);
+} 
+
+//resposta item c
+
+console.log("//resposta item c");
+let novoArray = [];
+for (let numero of arrayOriginal){
+   if (numero % 2 === 0){
+      novoArray.push(numero);
+   }
+} 
+
+console.log(novoArray);
+
+//resposta item d
+
+console.log("//resposta item d");
+
+let arrayMensagens = [];
+let mensagem = "";
+
+for (let i = 0 ; i < arrayOriginal.length; i++) {
+    mensagem = "O elemento do índex " + i + "  é " + arrayOriginal[i] ;
+    arrayMensagens.push(mensagem);
+}
+
+console.log(arrayMensagens);
+
+//resposta item e
+
+console.log("//resposta item e");
+
+let valorMaximo = 0;
+let valorMinimo = 9999;
+
+for (let i = 0 ; i < arrayOriginal.length; i++) {
+  if (arrayOriginal[i] > valorMaximo){
+     valorMaximo = arrayOriginal[i];
+  }
+
+  if (arrayOriginal[i] < valorMinimo) {
+     valorMinimo = arrayOriginal[i];
+  }
+}
+
+console.log("O maior número é ", valorMaximo , " e o menor  é ", valorMinimo);
+
