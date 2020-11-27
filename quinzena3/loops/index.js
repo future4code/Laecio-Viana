@@ -115,3 +115,4 @@ while (numeroPrimeiroJogador !== numeroSegundoJogador){
 console.log("O número chutado foi :" , numeroSegundoJogador);
 console.log("Parabéns, você acertou !!! \n O número de tentativas foi : " , quantidadeTentativasAteAcerto);
 
+//Até que foi fácil fazer a alteração para realizar sorteio do número, após ler as referências solicitadas 
