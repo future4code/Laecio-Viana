@@ -89,3 +89,28 @@ for (let i = 0 ; i < arrayOriginal.length; i++) {
 
 console.log("O maior número é ", valorMaximo , " e o menor  é ", valorMinimo);
 
+
+//DESAFIO 2
+
+const numeroPrimeiroJogador = Number(prompt("Digite um número a ser adivinhado"));
+console.log(" Vamos Jogar !!!");
+let numeroSegundoJogador = Number(prompt("Adivinhe o número escolhido pelo primeiro jogador "));
+let quantidadeTentativasAteAcerto = 1;
+
+while (numeroPrimeiroJogador !== numeroSegundoJogador){
+
+   console.log("O número chutado foi :" , numeroSegundoJogador);
+   if (numeroPrimeiroJogador > numeroSegundoJogador){
+       console.log(" Que pena, você  errou , pois o número escolhido  é maior. ");
+       numeroSegundoJogador = Number(prompt("Tente adivinhar novamente. Digite outro número"));
+   } else {
+
+      console.log(" Que pena, você  errou , pois o número escolhido  é menor. ");
+      numeroSegundoJogador = Number(prompt("Tente adivinhar novamente. Digite outro número"));
+   }
+    
+   quantidadeTentativasAteAcerto += 1;
+}
+console.log("O número chutado foi :" , numeroSegundoJogador);
+console.log("Parabéns, você acertou !!! \n O número de tentativas foi : " , quantidadeTentativasAteAcerto);
+
