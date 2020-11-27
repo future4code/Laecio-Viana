@@ -90,9 +90,10 @@ for (let i = 0 ; i < arrayOriginal.length; i++) {
 console.log("O maior número é ", valorMaximo , " e o menor  é ", valorMinimo);
 
 
-//DESAFIO 2
+//DESAFIO 2 e DESAFIO 3
 
-const numeroPrimeiroJogador = Number(prompt("Digite um número a ser adivinhado"));
+const numeroPrimeiroJogador = Math.floor((Math.random() * 100) + 1);
+
 console.log(" Vamos Jogar !!!");
 let numeroSegundoJogador = Number(prompt("Adivinhe o número escolhido pelo primeiro jogador "));
 let quantidadeTentativasAteAcerto = 1;
