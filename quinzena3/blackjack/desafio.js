@@ -56,13 +56,20 @@ if (confirm("Gostaria de jogar uma partida?")) {
              
       }
       
-
+       cartaUsuario = "";
+       cartaComputador = ""
       //Definição das pontuações do usuário e do computador
       for (let index = 0; index <= 1 ; index++){
            pontuacaoUsuario += arrayCartasUsuario[index].valor;
            pontuacaoComputador += arrayCartasComputador[index].valor;
+           cartaUsuario += arrayCartasUsuario[index].texto;
+           cartaComputador = arrayCartasComputador[0].texto;
+           
+          
       }
-      
+
+      confirm("Suas cartas são " + cartaUsuario +  ". A carta revelada do computador é " + cartaComputador +  ". \n" + "Deseja Comprar outra carta?");
+       
      
       //mensagem informando as cartas do usuário e sua pontuação e também as cartas do computador e sua pontuação
       console.log("Usuário - cartas : " , arrayCartasUsuario[0].texto , arrayCartasUsuario[1].texto , "Pontuação : " , pontuacaoUsuario);
