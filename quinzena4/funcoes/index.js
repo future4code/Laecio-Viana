@@ -14,5 +14,10 @@
 //EXERCICIO 3
 
 // A função recebe um array como parametro, cria um novo array  , percorre o array passado como argumento verificando
-// se o elemento é par  e adicionando no novo array o produto dele por ele mesmo  e dá como retorno esse novo array
+// se o elemento é par  e adicionando no novo array o produto dele por ele mesmo  e dá como retorno esse novo array.
+// novo nome retornaArrayComElementosPares
+
+
+
+
 
