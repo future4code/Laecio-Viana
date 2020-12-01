@@ -128,3 +128,75 @@
                 return quantidadeNumerosPares
             }
        console.log(calculaQuantidadeNumerosParesDoArray(array), "Números pares")
+
+
+      // DESAFIO 1
+
+    let mostrarMensagemConsole = (valor) => {
+        console.log(valor)
+    }
+
+    let chamarFuncaoMostrarMensagemConsole = (numero1, numero2) => {
+        let soma = numero1 + numero2
+        mostrarMensagemConsole(soma)
+    }
+
+    chamarFuncaoMostrarMensagemConsole(1,2)
+
+
+    //DESAFIO 2
+
+    const numeros = [0, 8, 23, 16, 10, 15, 41, 12, 13]
+
+    //a)
+        function retornaArrayComElementosParesMultiplicadosPor2(array){
+             let novoArray = []
+
+             for (const elemento of numeros) {
+                if (elemento % 2 === 0){
+                   novoArray.push(elemento * 2)
+                }
+             }
+
+             return novoArray
+        }
+
+        console.log(retornaArrayComElementosParesMultiplicadosPor2(array))
+
+//b)
+
+      function retornaMaiorNumeroArray (numeros) {
+          let maiorNumero = 0
+
+          for (const numero of numeros) {
+              if (numero > maiorNumero) {
+                  maiorNumero = numero
+              }
+          }
+
+          return maiorNumero
+      }
+
+      console.log("Maior número do array " , retornaMaiorNumeroArray(numeros))
+
+// c)  
+
+    function retornaIndiceDoMaiorNumeroArray (array) {
+
+        let maiorNumeroArray = 0
+        let indiceMaiorNumeroArray
+
+        for (let i = 0 ; i < array.length ; i++){
+            if (array[i] > maiorNumeroArray) {
+                maiorNumeroArray = array[i]
+                indiceMaiorNumeroArray = i
+            }
+        }
+
+           
+
+        return indiceMaiorNumeroArray
+         
+    }
+
+    console.log("O maior elemento do array está na posição " , retornaIndiceDoMaiorNumeroArray(numeros))
