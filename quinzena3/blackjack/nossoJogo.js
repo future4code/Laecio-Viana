@@ -11,17 +11,43 @@
  * 
  */
 
- //mensagem de boas vindas ao jogo
- console.log("Bem Vindo ao jogo de BlackJack!");
-
-
- //mensagem solicitando ao usuário se ele quer jogar ou não
- if (confirm("Gostaria de iniciar uma nova rodada?")){
-   //iniciar rodada se usuário digitar ok
-  
- } else {
-    //mensagem de finalização do jogo se o usuário digitar cancelar
-    console.log("O jogo acabou");
- }
 
  
+//mensagem de boas vindas ao jogo
+
+console.log("Bem vindo ao jogo de BlackJack");
+
+//pergunta se o usuário quer jogar uma partida
+if (confirm("Gostaria de jogar uma partida?")) {
+   //código realizado se o usuário clicar no ok
+
+      //duas primeiras cartas do usuário e do computador
+      let primeiraCartaUsuario =  comprarCarta(); 
+      let segundaCartaUsuario =   comprarCarta();
+      let primeiraCartaComputador = comprarCarta();
+      let segundaCartaComputador = comprarCarta();
+
+      
+        
+
+      //Definição das pontuações do usuário e do computador
+      let pontuacaoUsuario = primeiraCartaUsuario.valor + segundaCartaUsuario.valor;
+      let pontuacaoComputador = primeiraCartaComputador.valor + segundaCartaComputador.valor;
+     
+      //mensagem informando as cartas do usuário e sua pontuação e também as cartas do computador e sua pontuação
+      console.log("Usuário - cartas : " , primeiraCartaUsuario.texto , segundaCartaUsuario.texto , "Pontuação : " , pontuacaoUsuario);
+      console.log("Computador - cartas : " , primeiraCartaComputador.texto , segundaCartaComputador.texto , "Pontuação : " , pontuacaoComputador);
+      
+       //condicional verificando a pontuação entre os jogadores e mostrando quem foi o vencedor ou  se foi empate
+      if (pontuacaoUsuario > pontuacaoComputador) {
+         console.log(" O Usuário venceu o jogo");
+      } else  if (pontuacaoUsuario < pontuacaoComputador){
+         console.log("O Computador venceu o jogo")
+      } else {
+         console.log("Empate !");
+      }
+} else {
+   //mensagem no console se o usuário clicou no cancelar
+   console.log("O jogo acabou!");
+}
+
