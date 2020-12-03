@@ -37,18 +37,17 @@ button {
 section {
     display: flex;
     justify-content: space-evenly;
-    height: 80vh;
+    height: 90vh;
 }
-
-
 
 .semana {
     border: 1px solid rgb(53, 53, 53);
     width: 14%;
     padding-top: 20px;
-    display: flex;
-    justify-content: center;
+   /*  display: flex;
+    justify-content: center; */
     background-color: #777;
+    text-align: center;
     
 }
 
