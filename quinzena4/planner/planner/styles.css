@@ -54,3 +54,7 @@ section {
 h3 {
     color: #fff;
 }
+
+.texto-riscado {
+    text-decoration: line-through;
+}
