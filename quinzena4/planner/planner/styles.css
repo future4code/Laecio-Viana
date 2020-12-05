@@ -1,0 +1,60 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+header {
+    height: 10vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: royalblue;
+   
+}
+
+label {
+    color: #fff;
+    font-size: 22px;
+    margin-right: 10px;
+    
+}
+
+input , select , button{
+    font-size: 18px;
+    height: 30px;
+    margin-right: 10px;
+}
+
+button {
+    width: 150px;
+    color: #fff;
+    background-color: rgb(14, 182, 36);
+}
+
+
+
+section {
+    display: flex;
+    justify-content: space-evenly;
+    height: 90vh;
+}
+
+.semana {
+    border: 1px solid rgb(53, 53, 53);
+    width: 14%;
+    padding-top: 20px;
+   /*  display: flex;
+    justify-content: center; */
+    background-color: #777;
+    text-align: center;
+    
+}
+
+h3 {
+    color: #fff;
+}
+
+.texto-riscado {
+    text-decoration: line-through;
+}
