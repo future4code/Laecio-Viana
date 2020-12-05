@@ -18,7 +18,7 @@ function resolverExerciciosInterpretacaoCodigo () {
    O primeiro console.log vai mostrar o valor 165 e no segundo console.log vai dar um alert com a mensagem 'tipo de investimento
    informado incorreto'  e mostrar a  mensagem  undefined */
 
-}
+
 
    //exercicio 3
 
@@ -29,3 +29,18 @@ function resolverExerciciosInterpretacaoCodigo () {
    No segundo console.log  vai mostrar o número 6
    No terceiro console.log vai mostrar o número 8
  */
+
+
+ //exercicio 4
+    /* Vai percorrer todos os elementos do array  e armazenar em uma variável o maior valor entre eles  e em outra variável 
+    o menor valor entre eles.
+    cria um array com elementos , uma variável com  valor Infinity para que qualquer valor seja menor que ele 
+    e outra variável com valor 0 para que qualquer valor seja maior que ele .
+
+    vai percorrer o array com o for ...of verificando se o  elemento do array é menor que a primeira variável 
+     e caso seja  essa variável vai receber o valor desse elemento  e também verifica se o elemento do array é maior
+     que a segunda variável  e se for  essa variável vai receber o valor desse elemento.
+
+     primeiro console.log vai mostrar o número -10  e o segundo console.log vai mostrar o número 1590 */
+
+}
