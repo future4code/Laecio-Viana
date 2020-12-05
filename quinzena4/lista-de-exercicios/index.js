@@ -9,6 +9,7 @@ function resolverExerciciosInterpretacaoCodigo () {
  */
 
     //exercicio 2
+
    /* A função usa como parâmetros o tipo de investimento a ser feito  e o valor desse investimento  e vai retornar o novo
    valor após realização desse investimento.  Dentro da função é criada uma variável que representa o novo valor 
    após investimento , é usada uma estrutura de decisão switch case que dependendo do tipo de investimento 
@@ -18,3 +19,13 @@ function resolverExerciciosInterpretacaoCodigo () {
    informado incorreto'  e mostrar a  mensagem  undefined */
 
 }
+
+   //exercicio 3
+
+  /*  Possui um array com vários elementos  e dois arrays vazios, usa a estrutura de repetição for ... of para percorrer
+   cada elemento do array com os elementos, dentro do laço verifica com o if else se o elemento é par ou ímpar , caso seja
+   par , ele adiciona esse elemento no primeiro array vazio  e caso seja ímpar adiciona no segundo array vazio.
+   No primeiro console.log vai mostrar a  mensagem 'Quantidade total de números 14'
+   No segundo console.log  vai mostrar o número 6
+   No terceiro console.log vai mostrar o número 8
+ */
