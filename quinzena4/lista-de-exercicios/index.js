@@ -44,3 +44,23 @@ function resolverExerciciosInterpretacaoCodigo () {
      primeiro console.log vai mostrar o número -10  e o segundo console.log vai mostrar o número 1590 */
 
 }
+
+function resolverExercicio1LogicaProgramacao () {
+   //utilizando o for , o for ...of  ou while
+   const anos = [1990, 1994, 2002, 2010]
+   let index = 0
+   while (index < anos.length){
+       console.log(anos[index])
+       index++
+   }
+
+   for (let indice = 0 ; indice < anos.length; indice++) {
+       console.log(anos[indice])
+   }
+
+   for (ano of anos) {
+       console.log(ano)
+   }
+}
+
+//resolverExercicio1LogicaProgramacao()
