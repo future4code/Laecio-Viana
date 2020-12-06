@@ -64,3 +64,12 @@ function resolverExercicio1LogicaProgramacao () {
 }
 
 //resolverExercicio1LogicaProgramacao()
+
+function resolverExercicio2LogicaProgramacao (){
+   //a)  False
+   //b) False
+   //c) True
+   //d) True
+   //e) True
+       
+}
