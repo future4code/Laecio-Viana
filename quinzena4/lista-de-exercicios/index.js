@@ -100,3 +100,38 @@ function resolverExercicio4LogicaProgramacao (a,b, c){
 
 /*  const tipoTriangulo = resolverExercicio4LogicaProgramacao(8,8,8)
 console.log(tipoTriangulo)  */
+
+
+function resolverExercicio5LogicaProgramacao (numero1, numero2) {
+       let maior
+       let menor
+       if (numero1 > numero2){
+           maior = numero1
+           menor = numero2
+       } else if (numero2 > numero1){
+           maior = numero2
+           menor = numero1
+       }
+       console.log("O maior número é ", maior)
+   
+
+       if (numero1 % numero2 === 0){
+          console.log(`${numero1} é divisível por ${numero2}`)
+       } else {
+          console.log(`${numero1}  não é divisível por ${numero2}`)
+       }
+
+       if (numero2 % numero1 === 0){
+            console.log(`${numero2} é divisível por ${numero1}`)
+       } else {
+            console.log(`${numero2}  não é divisível por ${numero1}`)
+       }
+
+
+
+     
+       console.log(`A diferença entre os números é de ${maior - menor}`)
+
+}
+
+//resolverExercicio5LogicaProgramacao(10,50)
