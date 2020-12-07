@@ -73,3 +73,17 @@ function resolverExercicio2LogicaProgramacao (){
    //e) True
        
 }
+
+function resolverExercicio3LogicaProgramacao () {
+    //Não funciona porque não está incrementando a variável i dentro do bloco do while  e também
+    //a variável de quantidade de números pares está sem valor , portanto fica como undefined e a condicional
+    //do while tem que ir até menor que a variável  de quantidade de números pares
+    const quantidadeDeNumerosPares = 7
+    let i = 0
+    while(i < quantidadeDeNumerosPares) {
+          console.log(i*2)
+          i++
+    }
+}
+
+//resolverExercicio3LogicaProgramacao()
