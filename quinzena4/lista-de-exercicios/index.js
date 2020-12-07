@@ -78,7 +78,7 @@ function resolverExercicio3LogicaProgramacao () {
     //Não funciona porque não está incrementando a variável i dentro do bloco do while  e também
     //a variável de quantidade de números pares está sem valor , portanto fica como undefined e a condicional
     //do while tem que ir até menor que a variável  de quantidade de números pares
-    const quantidadeDeNumerosPares = 7
+    const quantidadeDeNumerosPares = 3
     let i = 0
     while(i < quantidadeDeNumerosPares) {
           console.log(i*2)
@@ -87,3 +87,16 @@ function resolverExercicio3LogicaProgramacao () {
 }
 
 //resolverExercicio3LogicaProgramacao()
+
+function resolverExercicio4LogicaProgramacao (a,b, c){
+    if (a === b && b === c){
+        return "Triângulo Equilátero"
+    } else if (a !== b && b !== c && c !== a){
+        return "Triângulo Escaleno"
+    } else {
+        return "Triângulo Isósceles"
+    }
+}
+
+/*  const tipoTriangulo = resolverExercicio4LogicaProgramacao(8,8,8)
+console.log(tipoTriangulo)  */
