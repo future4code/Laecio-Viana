@@ -135,3 +135,16 @@ function resolverExercicio5LogicaProgramacao (numero1, numero2) {
 }
 
 //resolverExercicio5LogicaProgramacao(10,50)
+
+/* function resolverExercicio1Funcoes (valores){
+   
+}
+
+const numeros = [8,14,56,43,2,11,7,44,36]
+//resolverExercicio1Funcoes(numeros) */
+
+let resolverExercicio2Funcoes = function (){
+    alert("Hello Future4")
+}
+
+resolverExercicio2Funcoes()
