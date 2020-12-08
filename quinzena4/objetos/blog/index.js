@@ -4,6 +4,8 @@ let textoDigitado = document.getElementById("conteudo-post")
 
 const arrayPosts = []
 
+const posts = document.getElementById("container-de-posts")
+
 function criarPost() {
    const post = {
        titulo : tituloDigitado.value,
@@ -14,6 +16,8 @@ function criarPost() {
    adicionarPostNoArray(post)
    console.log(arrayPosts)
    limparCamposFormulario()
+   mostrarPosts()  
+
 
    
      
@@ -28,6 +32,16 @@ function limparCamposFormulario () {
     autorDigitado.value = ""
     textoDigitado.value = ""
 }
+
+function mostrarPosts(){
+    
+    posts.innerHTML = ""
+
+    for (let post of arrayPosts){
+        posts.innerHTML +=`<p> Título : ${post.titulo}, Autor : ${post.autor}, Conteúdo : ${post.conteudo}</p>`
+    }
+}
+
 
 
    
