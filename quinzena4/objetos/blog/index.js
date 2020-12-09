@@ -5,7 +5,6 @@ let imagemEscolhida = document.getElementById("imagem-post")
 
 const arrayPosts = []
 
-const posts = document.getElementById("container-de-posts")
 
 function criarPost() {
    const post = {
@@ -19,9 +18,7 @@ function criarPost() {
    console.log(arrayPosts)
    limparCamposFormulario()
    mostrarPosts()  
-
-
-   
+      
      
 }
 
@@ -37,6 +34,9 @@ function limparCamposFormulario () {
 }
 
 function mostrarPosts(){
+
+    const posts = document.getElementById("container-de-posts")
+   
     
     posts.innerHTML = ""
 
@@ -46,6 +46,8 @@ function mostrarPosts(){
         posts.innerHTML += `<img src = "${post.imagem}">`
     }
 }
+
+
 
 
 
