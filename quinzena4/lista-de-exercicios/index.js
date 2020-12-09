@@ -158,3 +158,21 @@ function resolverExercicio1Objetos (){
     // O objeto é uma estrutura que representa algo próximo da realidade, utilizamos quando queremos evitar
     //a criação de muitas variáveis  através de suas chaves e valores.
 }
+
+const criaRetangulo = (lado1, lado2) => {
+    
+    const perimetro = 2 * (lado1 + lado2)
+    const area = lado1 * lado2
+
+    const retangulo = {
+        largura: lado1,
+        altura : lado2,
+        perimetro : perimetro,
+        area: area
+
+    }
+
+    return retangulo
+}
+
+console.log(criaRetangulo(4, 3))
