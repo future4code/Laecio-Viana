@@ -150,3 +150,11 @@ let resolverExercicio2Funcoes = function (){
 }
 
 //resolverExercicio2Funcoes()
+
+function resolverExercicio1Objetos (){
+    //O array é uma estrutura que permite guardar vários valores de forma ordenada, utilizamos quando
+    // precisamos guardar mais de um valor em uma variável para não perder esses dados
+
+    // O objeto é uma estrutura que representa algo próximo da realidade, utilizamos quando queremos evitar
+    //a criação de muitas variáveis  através de suas chaves e valores.
+}
