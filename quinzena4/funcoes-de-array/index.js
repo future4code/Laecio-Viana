@@ -18,7 +18,7 @@ function imprimirDespesas(despesas){
 // SEGUNDO 
 function imprimirExtrato(){
     let divExtrato = document.getElementById('extrato')
-    let gastoTotal = 0
+    //let gastoTotal = 0
     let gastoAlimentacao = 0
     let gastoUtilidades = 0
     let gastoViagem = 0
@@ -37,9 +37,12 @@ function imprimirExtrato(){
           gastoViagem += despesa.valor
        }
 
-       gastoTotal = gastoAlimentacao + gastoUtilidades + gastoViagem
+      // gastoTotal = gastoAlimentacao + gastoUtilidades + gastoViagem
     })
-
+    
+    let gastoTotal = arrDespesas.reduce((totalDespesas, despesa)=>{
+           return totalDespesas + despesa.valor
+    } , 0)
     
 
     divExtrato.innerHTML = `<p>Extrato: Gasto Total: R$${gastoTotal} | Alimentação: R$${gastoAlimentacao} | 
