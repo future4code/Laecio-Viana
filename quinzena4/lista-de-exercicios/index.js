@@ -176,3 +176,18 @@ const criaRetangulo = (lado1, lado2) => {
 }
 
 console.log(criaRetangulo(4, 3))
+
+
+function resolverExercicio3Objetos (){
+    const filmeFavorito = {
+        título: "Pantera Negra",
+        anoLancamento: 2018,
+        diretor:" Ryan Coogler",
+        elenco: ["Chadwick Boseman", "Michael B. Jordan", "Letitia Wright","Lupita Nyong'o"]
+
+    }
+
+    console.log(`Venha assistir ao filme ${filmeFavorito.título}, de ${filmeFavorito.anoLancamento}, dirigido por ${filmeFavorito.diretor} e estrelado por ${filmeFavorito.elenco}`)
+}
+
+resolverExercicio3Objetos()
