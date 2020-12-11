@@ -208,5 +208,24 @@ function anonimizarPessoa (){
     return pessoaAnonima
 }
 
-console.log(anonimizarPessoa())
-console.log(pessoa)
+/* console.log(anonimizarPessoa())
+console.log(pessoa) */
+
+
+const pessoas = [
+	{ nome: "Pedro", idade: 20 },
+	{ nome: "João", idade: 10 },
+	{ nome: "Paula", idade: 12 },
+	{ nome: "Artur", idade: 89 } 
+]
+
+const pessoasAdultas  = pessoas.filter((pessoa)=>{
+    return pessoa.idade >= 20
+})
+
+const pessoasJovens = pessoas.filter((pessoa)=>{
+     return pessoa.idade  < 20
+})
+
+/* console.log(pessoasAdultas)
+console.log(pessoasJovens) */
