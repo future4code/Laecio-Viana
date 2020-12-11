@@ -175,7 +175,7 @@ const criaRetangulo = (lado1, lado2) => {
     return retangulo
 }
 
-console.log(criaRetangulo(4, 3))
+//console.log(criaRetangulo(4, 3))
 
 
 function resolverExercicio3Objetos (){
@@ -190,4 +190,23 @@ function resolverExercicio3Objetos (){
     console.log(`Venha assistir ao filme ${filmeFavorito.título}, de ${filmeFavorito.anoLancamento}, dirigido por ${filmeFavorito.diretor} e estrelado por ${filmeFavorito.elenco}`)
 }
 
-resolverExercicio3Objetos()
+//resolverExercicio3Objetos()
+
+const pessoa = {
+    nome: "Laécio",
+    idade : 27,
+    email: "laecio@gmail.com",
+    endereco: "rua Ouro Preto Nº 1345"
+}
+
+function anonimizarPessoa (){
+    const pessoaAnonima = {
+        ...pessoa,
+        nome: "Anônimo"
+    }
+
+    return pessoaAnonima
+}
+
+console.log(anonimizarPessoa())
+console.log(pessoa)
