@@ -105,6 +105,14 @@ function filtrarDespesas(){
 }
 
 
+function ordenarDespesas(){
+    let despesasOrdenadas = arrDespesas.sort((a, b)=>{
+        return b.valor - a.valor
+    })
+
+    imprimirDespesas(despesasOrdenadas)
+}
+
 
 
 
