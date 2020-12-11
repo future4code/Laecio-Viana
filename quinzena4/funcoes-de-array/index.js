@@ -90,12 +90,18 @@ function filtrarDespesas(){
     let valorMin = Number(document.getElementById('valorFiltroMin').value)
     let valorMax = Number(document.getElementById('valorFiltroMax').value)
 
+    if (tipoFiltro !== "" && valorMin !== "" && valorMax !== "" && valorMin >= 0 && valorMin < valorMax  && valorMax >= 0){
 
-    let despesasFiltradas = arrDespesas.filter((despesa)=>{
-      return despesa.tipo === tipoFiltro && despesa.valor >= valorMin && despesa.valor <= valorMax
-    })
+        let despesasFiltradas = arrDespesas.filter((despesa)=>{
+          return despesa.tipo === tipoFiltro && despesa.valor >= valorMin && despesa.valor <= valorMax
+        })
+    
+        imprimirDespesas(despesasFiltradas)
+    } else {
+        alert("Faltou o preenchimento de algum campo, ou algum valor está negativo ou valor mínimo está maior que o valor máximo")
+    }
 
-    imprimirDespesas(despesasFiltradas)
+
 }
 
 
