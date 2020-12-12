@@ -212,19 +212,19 @@ function anonimizarPessoa (){
 console.log(pessoa) */
 
 
-const pessoas = [
+const individuos = [
 	{ nome: "Pedro", idade: 20 },
 	{ nome: "João", idade: 10 },
 	{ nome: "Paula", idade: 12 },
 	{ nome: "Artur", idade: 89 } 
 ]
 
-const pessoasAdultas  = pessoas.filter((pessoa)=>{
-    return pessoa.idade >= 20
+const pessoasAdultas  = individuos.filter((individuo)=>{
+    return individuo.idade >= 20
 })
 
-const pessoasJovens = pessoas.filter((pessoa)=>{
-     return pessoa.idade  < 20
+const pessoasJovens = individuos.filter((individuo)=>{
+     return individuo.idade  < 20
 })
 
 /* console.log(pessoasAdultas)
@@ -253,3 +253,23 @@ const mostraElementoArraySeEImparOuPar = array.map((numero)=>{
 })
 
 //console.log(mostraElementoArraySeEImparOuPar)
+
+const pessoas = [
+	{ nome: "Paula", idade: 12, altura: 1.8},
+	{ nome: "João", idade: 20, altura: 1.3},
+	{ nome: "Pedro", idade: 15, altura: 1.9},
+	{ nome: "Luciano", idade: 22, altura: 1.8},
+	{ nome: "Artur", idade: 10, altura: 1.2},
+	{ nome: "Soter", idade: 70, altura: 1.9}
+]
+
+const pessoasEntradaPermitida = pessoas.filter((pessoa)=>{
+     return pessoa.altura >= 1.5 && pessoa.idade > 14 && pessoa.idade < 60
+})
+
+const pessoasEntradaProibida = pessoas.filter((pessoa)=>{
+     return pessoa.altura < 1.5 || pessoa.idade <= 14  || pessoa.idade >= 60
+})
+
+/* console.log(pessoasEntradaPermitida)
+console.log(pessoasEntradaProibida) */
