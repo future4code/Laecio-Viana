@@ -273,3 +273,44 @@ const pessoasEntradaProibida = pessoas.filter((pessoa)=>{
 
 /* console.log(pessoasEntradaPermitida)
 console.log(pessoasEntradaProibida) */
+
+
+const consultas = [
+	{ nome: "João", genero: "masculino", cancelada: true, dataDaConsulta: "01/10/2019" },
+	{ nome: "Pedro", genero: "masculino", cancelada: false, dataDaConsulta: "02/10/2019" },
+	{ nome: "Paula", genero: "feminino", cancelada: true, dataDaConsulta: "03/11/2019" },
+	{ nome: "Márcia", genero: "feminino", cancelada: false, dataDaConsulta: "04/11/2019" }
+]
+
+const mensagens = []
+let mensagem
+consultas.forEach((consulta)=>{
+    if (consulta.cancelada === false){
+            if (consulta.genero === "feminino"){
+                    mensagem = `Olá Sra. ${consulta.nome}. Estamos enviando essa mensagem para lembrá-la da sua consulta no dia 
+                    ${consulta.dataDaConsulta}. Por favor acuse o recebimento desse email. `
+                    mensagens.push(mensagem)
+            } else {
+                    mensagem = `Olá Sr. ${consulta.nome}. Estamos enviando essa mensagem para lembrá-lo da sua consulta no dia 
+                    ${consulta.dataDaConsulta}. Por favor acuse o recebimento desse email. `
+                    mensagens.push(mensagem)
+            }
+
+    } else{
+
+            if (consulta.genero === "feminino"){
+                    mensagem = `Olá Sra. ${consulta.nome}. Infelizmente, sua consulta marcada para o dia 
+                    ${consulta.dataDaConsulta} foi cancelada. Se quiser, pode entrar em contato conosco para remarcá-la. `
+                    mensagens.push(mensagem)
+            } else {
+                    mensagem = `Olá Sr. ${consulta.nome}.Infelizmente, sua consulta marcada para o dia 
+                    ${consulta.dataDaConsulta} foi cancelada. Se quiser, pode entrar em contato conosco para remarcá-la. `
+                    mensagens.push(mensagem)
+            }
+
+
+    }
+})
+
+//console.log(mensagens)
+
