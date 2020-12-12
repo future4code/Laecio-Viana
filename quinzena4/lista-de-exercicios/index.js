@@ -229,3 +229,27 @@ const pessoasJovens = pessoas.filter((pessoa)=>{
 
 /* console.log(pessoasAdultas)
 console.log(pessoasJovens) */
+
+const array = [1, 2, 3, 4, 5, 6]
+const multiplicaElementoArrayPor2 = array.map((valor)=>{
+    return valor * 2
+})
+
+//console.log(multiplicaElementoArrayPor2)
+
+const multiplicaElementoArrayPor3EmString = array.map((elemento)=>{
+     
+     return `${elemento * 3}`
+})
+
+//console.log(multiplicaElementoArrayPor3EmString)
+
+const mostraElementoArraySeEImparOuPar = array.map((numero)=>{
+     if (numero % 2 === 0){
+        return `${numero}  é par`
+     } else {
+         return `${numero} é ímpar`
+     }
+})
+
+//console.log(mostraElementoArraySeEImparOuPar)
