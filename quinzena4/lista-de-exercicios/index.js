@@ -326,9 +326,9 @@ const contas = [
 
  function atualizaSaldoBancarioClientes () {
 
+     let totalCompras 
      contas.forEach((conta)=>{
-         let totalCompras = 0
-     
+         totalCompras = 0
          for (let compra of conta.compras){
              totalCompras += compra
          }
