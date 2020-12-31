@@ -1,19 +1,21 @@
 body {
-    width: 100vw;
+    max-width: 100vw;
     height: 100vh;
     padding: 0;
     margin: 0;
+    box-sizing: border-box;
 }
 
 div {
     border: 1px solid black;
+    
 }
 
 #main-container{
     min-height: 100vh;
     
     display: grid;
-    grid-template-rows: 4fr 4fr 4fr 12fr 4fr;
+    grid-template-rows: 100px 1fr 1fr 2fr 1fr;
     
    
 }
@@ -25,8 +27,10 @@ div {
 
 #segundo-bloco{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-   
+    grid-template-columns: auto auto auto;
+    margin: 10px 15px;  
+    column-gap: 20px;
+    
       
     
     
@@ -35,18 +39,24 @@ div {
 
 #terceiro-bloco {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: auto auto auto;
+    margin: 10px 15px;   
+    column-gap: 20px;
     
 }
 
 #quarto-bloco {
     display: grid;
-    grid-template-columns: 1fr 1fr ;
+    grid-template-columns: auto auto ;
+    margin: 10px 15px;  
+    column-gap: 20px;
 }
 
 #quinto-bloco{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr ;
+    grid-template-columns: auto auto auto ;
+    margin: 10px 15px;  
+    column-gap: 20px; 
 }
 
 .blue-block {
