@@ -61,22 +61,37 @@ div {
 
 .blue-block {
     background-color: blue;
+    display: grid;
+    align-items: center;
+    justify-items: center;
     
 }
 
 .yellow-block {
     background-color: yellow;
+    display: grid;
+    align-items: center;
+    justify-items: center;
 }
 
 .green-block {
     background-color: green;
+    display: grid;
+    align-items: center;
+    justify-items: center;
 }
 
 .black-block {
     background-color: black;
     color: white;
+    display: grid;
+    align-items: center;
+    justify-items: center;
 }
 
 .white-block {
     background-color: white;
+    display: grid;
+    align-items: center;
+    justify-items: center;
 }
