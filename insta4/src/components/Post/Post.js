@@ -7,13 +7,17 @@ import iconeCoracaoBranco from '../../img/favorite-white.svg'
 import iconeCoracaoPreto from '../../img/favorite.svg'
 import iconeComentario from '../../img/comment_icon.svg'
 import {SecaoComentario} from '../SecaoComentario/SecaoComentario'
+import {Comentarios} from '../Comentarios/Comentarios'
 
 class Post extends React.Component {
   state = {
     curtido: false,
     numeroCurtidas: 0,
-    comentando: false,
-    numeroComentarios: 0
+    comentando: true,
+    numeroComentarios: 0,
+    comentarios:[]
+   
+    
   }
 
   onClickCurtida = () => {
@@ -40,16 +44,28 @@ class Post extends React.Component {
     this.setState({
       comentando: !this.state.comentando
     })
+
+    
   }
 
-  aoEnviarComentario = () => {
+  aoEnviarComentario = (mensagem) => {
+    const novoComentario = {
+      texto : mensagem
+    }
+
+    const listaComentarios = [...this.state.comentarios, novoComentario]
+   
     this.setState({
-      comentando: false,
-      numeroComentarios: this.state.numeroComentarios + 1
+      comentando: !this.state.comentando,
+      numeroComentarios: this.state.numeroComentarios + 1,
+      comentarios: listaComentarios
     })
-  }
 
+    
+  }
+  
   render() {
+    
     let iconeCurtida
 
     if(this.state.curtido) {
@@ -63,7 +79,7 @@ class Post extends React.Component {
     let componenteComentario
 
     if(this.state.comentando) {
-      componenteComentario = <SecaoComentario aoEnviar={this.aoEnviarComentario}/>
+      componenteComentario = <SecaoComentario aoEnviar={this.aoEnviarComentario} />
     }
 
     return <div className={'post-container'}>
@@ -88,6 +104,7 @@ class Post extends React.Component {
         />
       </div>
       {componenteComentario}
+      <Comentarios novosComentarios={this.state.comentarios}></Comentarios>
     </div>
   }
 }
