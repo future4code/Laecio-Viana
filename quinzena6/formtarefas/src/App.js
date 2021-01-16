@@ -23,18 +23,10 @@ class App extends React.Component {
       tarefas: [
         {id:Date.now(),
          texto:"estudar" ,
-         completa: false
-        },
+         completa: true
+        }
 
-        {id:Date.now(),
-          texto:"assistir animes" ,
-          completa: true
-         },
-
-         {id:Date.now(),
-          texto:"almoçar" ,
-          completa: true
-         }
+        
       ],
       inputValue: '',
       filtro: ''
@@ -64,7 +56,7 @@ class App extends React.Component {
     
     // nova lista de tarefas através da cópia da lista de tarefas do estado acrescendo a nova tarefa criada
     const listaTarefas = [novaTarefa, ...this.state.tarefas]
-    console.log(listaTarefas)
+    
 
 
     //alteração do estado com a nova lista de tarefas com as modificações
@@ -79,7 +71,26 @@ class App extends React.Component {
   }
 
   selectTarefa = (id) => {
+      //mapeamento da lista de tarefas do estado 
+     const novaListaDeTarefas = this.state.tarefas.map((tarefa)=>{
+           
+          //verificação se o id de uma tarefa da lista é igual ao id passado como parametro na função
+           if (id === tarefa.id){
 
+            //criação de um novo objeto tarefa , alterando sua propriedade completa
+               const novaTarefa = {
+                 ...tarefa,
+                 completa: !tarefa.completa
+               }              
+
+               return novaTarefa
+           } else {
+               return tarefa
+           }
+      })
+      
+      //modificação da lista do estado com a nova lista retornada depois do mapeamento
+      this.setState({tarefas:novaListaDeTarefas})
   }
 
   onChangeFilter = (event) => {
@@ -121,6 +132,7 @@ class App extends React.Component {
               <Tarefa
                 completa={tarefa.completa}
                 onClick={() => this.selectTarefa(tarefa.id)}
+                
               >
                 {tarefa.texto}
               </Tarefa>
