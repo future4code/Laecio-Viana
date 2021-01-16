@@ -33,10 +33,16 @@ class App extends React.Component {
     }
 
   componentDidUpdate() {
-
+    // salva as tarefas e converte em string
+     localStorage.setItem("tarefas" , JSON.stringify(this.state.tarefas))
   };
 
   componentDidMount() {
+    //pega as tarefas que estão como String , converte para objeto ou array  e altera o estado com essas tarefas
+     const tarefasArmazenadas = localStorage.getItem("tarefas")
+
+     this.setState({tarefas: JSON.parse(tarefasArmazenadas)})
+
 
   };
 
