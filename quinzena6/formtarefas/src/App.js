@@ -1,6 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 import './styles.css'
+import icone from './imagens/iconedelete.png'
 
 const TarefaList = styled.ul`
   padding: 0;
@@ -16,6 +17,18 @@ const InputsContainer = styled.div`
   display: grid;
   grid-auto-flow: column;
   gap: 10px;
+`
+
+const IconeExcluir = styled.img`
+    width:30px;
+    height:30px;
+    
+`
+
+const ContainerTarefas = styled.div`
+    display:grid;
+    grid-auto-flow:column;
+    margin-top: 20px;
 `
 
 class App extends React.Component {
@@ -104,6 +117,21 @@ class App extends React.Component {
        this.setState({filtro:event.target.value})
   }
 
+  apagarTarefa = (id)=>{
+        
+
+        const listaTarefasAposRemocao = this.state.tarefas.filter((tarefa)=>{
+             return id !== tarefa.id
+        })
+
+        console.log(listaTarefasAposRemocao)
+       
+
+        this.setState({tarefas:listaTarefasAposRemocao})
+
+        
+  }
+
   render() {
     const listaFiltrada = this.state.tarefas.filter(tarefa => {
       switch (this.state.filtro) {
@@ -136,13 +164,19 @@ class App extends React.Component {
         <TarefaList>
           {listaFiltrada.map(tarefa => {
             return (
-              <Tarefa
-                completa={tarefa.completa}
-                onClick={() => this.selectTarefa(tarefa.id)}
-                
-              >
-                {tarefa.texto}
-              </Tarefa>
+
+              <ContainerTarefas>
+
+                <Tarefa
+                  completa={tarefa.completa}
+                  onClick={() => this.selectTarefa(tarefa.id)}
+                  
+                >
+                  {tarefa.texto}
+                </Tarefa>
+                  <IconeExcluir src={icone} onClick={()=> this.apagarTarefa(tarefa.id)}></IconeExcluir>
+  
+              </ContainerTarefas>
             )
           })}
         </TarefaList>
