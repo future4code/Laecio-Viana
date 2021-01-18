@@ -133,7 +133,8 @@ class App extends React.Component {
   }
 
   render() {
-    const listaFiltrada = this.state.tarefas.filter(tarefa => {
+    console.log(this.state.tarefas)
+    const listaFiltrada = this.state.tarefas.filter((tarefa) => {
       switch (this.state.filtro) {
         case 'pendentes':
           return !tarefa.completa
@@ -162,7 +163,7 @@ class App extends React.Component {
           </select>
         </InputsContainer>
         <TarefaList>
-          {listaFiltrada.map(tarefa => {
+          {listaFiltrada.map((tarefa) => {
             return (
 
               <ContainerTarefas>
