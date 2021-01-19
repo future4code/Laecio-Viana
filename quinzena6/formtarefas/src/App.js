@@ -48,16 +48,26 @@ class App extends React.Component {
   componentDidUpdate() {
     // salva as tarefas e converte em string
      localStorage.setItem("tarefas" , JSON.stringify(this.state.tarefas))
-  };
+     
+    };
+    
+    componentDidMount() {
+      //pega as tarefas que estão como String , converte para objeto ou array  e altera o estado com essas tarefas
+      const tarefasArmazenadas = localStorage.getItem("tarefas")
+      let tarefasPersistidas = JSON.parse(tarefasArmazenadas)
+      if( tarefasPersistidas == null){
+        tarefasPersistidas = []
+      }
+    
+      
+    
+      
+    
+     this.setState({tarefas: tarefasPersistidas})
+    
 
-  componentDidMount() {
-    //pega as tarefas que estão como String , converte para objeto ou array  e altera o estado com essas tarefas
-     const tarefasArmazenadas = localStorage.getItem("tarefas")
 
-     this.setState({tarefas: JSON.parse(tarefasArmazenadas)})
-
-
-  };
+   };
 
   onChangeInput = (event) => {
        this.setState({inputValue:event.target.value})
@@ -75,6 +85,8 @@ class App extends React.Component {
     
     // nova lista de tarefas através da cópia da lista de tarefas do estado acrescendo a nova tarefa criada
     const listaTarefas = [novaTarefa, ...this.state.tarefas]
+
+    
     
 
 
@@ -84,8 +96,6 @@ class App extends React.Component {
          })
 
     
-
-
 
   }
 
@@ -124,8 +134,7 @@ class App extends React.Component {
              return id !== tarefa.id
         })
 
-        console.log(listaTarefasAposRemocao)
-       
+        
 
         this.setState({tarefas:listaTarefasAposRemocao})
 
@@ -133,7 +142,9 @@ class App extends React.Component {
   }
 
   render() {
-    console.log(this.state.tarefas)
+
+    
+    
     const listaFiltrada = this.state.tarefas.filter((tarefa) => {
       switch (this.state.filtro) {
         case 'pendentes':
@@ -145,6 +156,7 @@ class App extends React.Component {
       }
     })
 
+    
     return (
       <div className="App">
         <h1>Lista de tarefas</h1>
