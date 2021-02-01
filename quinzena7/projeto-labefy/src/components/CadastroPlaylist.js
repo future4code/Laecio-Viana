@@ -36,6 +36,7 @@ class CadastroPlaylist extends React.Component {
 
     return (
       <div>
+          <hr/>
           <h1>Cadastro de Playlist</h1>
 
           <form>
@@ -45,7 +46,7 @@ class CadastroPlaylist extends React.Component {
                   
               </div>
           </form>
-          <button onClick={()=> this.criarPlaylist(this.state.inputNomePlaylist)}>Cadastrar</button>
+          <button onClick={()=> this.criarPlaylist(this.state.inputNomePlaylist)}>Cadastrar</button><hr/>
       </div>
     );
   }
