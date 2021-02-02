@@ -3,7 +3,7 @@ import CadastroPlaylist from './components/CadastroPlaylist'
 import ListaPlaylist from './components/ListaPlaylist'
 
 class App extends React.Component {
-  
+ 
   render(){
 
     return (
