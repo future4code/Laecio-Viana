@@ -1,7 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 import imagemExcluir from '../imagens/delete-icon.png'
-import axios from 'axios'
+import axios from 'axios' 
+import  CadastroMusica from './CadastroMusica'
 
 
 const IconeDeletar = styled.img`
@@ -11,12 +12,12 @@ const IconeDeletar = styled.img`
 `
 
 
-
 class ItemPlaylist extends React.Component {
 
     state = {
         itemsPlaylistMostradas: false,
-        musicasPlaylist:[]
+        musicasPlaylist:[],
+        formularioMostrado: false
     }
 
     mostrarDetalhesPlaylist = (id)=>{
@@ -52,6 +53,10 @@ class ItemPlaylist extends React.Component {
             alert("Não foi possível deletar playlist")
         })
     }
+
+    adicionarMusicaNaPlaylist = () =>{
+        this.setState({formularioMostrado : !this.state.formularioMostrado})
+    }
     render(){
          const musicasPlaylist = this.state.musicasPlaylist.map((musica)=>{
              return <div key={musica.id}>
@@ -59,6 +64,7 @@ class ItemPlaylist extends React.Component {
                         <p>Nome da playlist:{this.props.playlist.name}</p>
                         <p>Nome da música :{musica.name}</p>
                         <p>Banda/artista:{musica.artist}</p>
+                        <hr/>
   
   
                     </div>
@@ -69,8 +75,12 @@ class ItemPlaylist extends React.Component {
             <div>
                 {this.props.playlist.name}
                 <IconeDeletar src={imagemExcluir} alt="icone excluir playlist" onClick={()=>this.deletarPlaylist(this.props.playlist.id)}/>
-                <button onClick={()=>this.mostrarDetalhesPlaylist(this.props.playlist.id)}> Detalhar</button>
+                <button onClick={()=>this.mostrarDetalhesPlaylist(this.props.playlist.id)}>{this.state.itemsPlaylistMostradas? 'Esconder detalhes': 'Mostrar detalhes'}</button>
+                <button onClick ={this.adicionarMusicaNaPlaylist}>{this.state.formularioMostrado? 'Esconder Formulário': 'Mostrar Formulário'}</button>
+                {this.state.formularioMostrado ? <CadastroMusica idPlaylist={this.props.playlist.id}/>:<div></div>}
                 {this.state.itemsPlaylistMostradas? <div>{musicasPlaylist}</div>:<div></div>}   
+              
+                 
                     
             </div>
         )
