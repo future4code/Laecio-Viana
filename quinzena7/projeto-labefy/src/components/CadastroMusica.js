@@ -64,7 +64,7 @@ class CadastroMusica extends React.Component {
                 </div>
                 <div>
                     <label>Link da Música:</label>
-                    <input type="url" placeholder="Informe a url da música" onChange={this.mudarUrlMusica} value ={this.state.inputUrlMusica}/>
+                    <input type="text" placeholder="Informe a url da música" onChange={this.mudarUrlMusica} value ={this.state.inputUrlMusica}/>
                 </div>
                 <button onClick={()=>this.cadastrarMusica(this.props.idPlaylist)}>Adicionar Música </button>
             </div>
