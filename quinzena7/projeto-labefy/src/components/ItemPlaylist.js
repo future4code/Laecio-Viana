@@ -64,6 +64,9 @@ class ItemPlaylist extends React.Component {
                         <p>Nome da playlist:{this.props.playlist.name}</p>
                         <p>Nome da música :{musica.name}</p>
                         <p>Banda/artista:{musica.artist}</p>
+                        <audio src={musica.url}  controls>
+                            
+                        </audio>
                         <hr/>
   
   
