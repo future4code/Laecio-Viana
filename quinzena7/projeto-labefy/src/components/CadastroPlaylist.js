@@ -7,7 +7,12 @@ const ContainerFormularioPlaylist = styled.div`
      justify-content: center;
      flex-direction: column;
      align-items: center;
-     background-color: #0BF19D;
+     background-color: #08AE3A;
+     border-bottom:1px solid #fff;
+
+     h1{
+        color:#fff;
+     }
      
     
     

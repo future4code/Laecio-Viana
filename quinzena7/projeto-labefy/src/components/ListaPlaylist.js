@@ -4,7 +4,14 @@ import styled from 'styled-components'
 import ItemPlaylist from './ItemPlaylist'
 
 const ContainerListaPlaylists = styled.div`
-     background-color: #0BF19D;
+     background-color: #08AE3A;
+     display:flex;
+     flex-direction: column;
+     align-items: center;
+
+     h1{
+        color:#fff;
+     }
 
 
 `
@@ -57,10 +64,10 @@ class ListaPlaylist extends React.Component{
       
         
         const playlistsRenderizadas = this.state.listaPlaylists.map((playlist)=>{
-              return    <li key={playlist.id}>
+              return    <div key={playlist.id}>
                             <ItemPlaylist playlist={playlist}/>
                               
-                        </li>
+                        </div>
                  
         })      
 
@@ -69,7 +76,7 @@ class ListaPlaylist extends React.Component{
         return (
             <ContainerListaPlaylists>
                 <h1>Lista de Playlists</h1>
-                {this.state.quantidadePlaylists === 0 ?<h3>Não possui playlist cadastrada</h3>:<ul>{playlistsRenderizadas}</ul>}
+                {this.state.quantidadePlaylists === 0 ?<h3>Não possui playlist cadastrada</h3>:<div>{playlistsRenderizadas}</div>}
                         
                 
                

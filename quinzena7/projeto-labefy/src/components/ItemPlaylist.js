@@ -6,10 +6,65 @@ import  CadastroMusica from './CadastroMusica'
 
 
 const IconeDeletar = styled.img`
-  width:20px;
-  height:20px;
+  width:40px;
+  height:30px;
 
 `
+
+const ContainerPlaylist = styled.div`
+     display: grid;
+     grid-template-columns: 200px 200px 200px 200px  ;
+     column-gap:15px;     
+`
+
+const ContainerMusica = styled.div`
+       display:grid;
+      grid-template-columns:180px 1fr; 
+      align-items: center;
+      
+
+`
+
+const ContainerCadastroMusica = styled.div`
+     grid-column: 1 / span 2;
+`
+
+const ContainerItemsPlaylist = styled.div`
+     grid-column: 3 / span 2;
+`
+
+
+const NomePlaylist  = styled.div`
+     font-size:22px;
+     font-weight:bold;
+`
+
+const NomeDetalhePlaylist  = styled.p`
+     font-size:20px;
+     font-weight:bold;
+`
+
+const BotaoDetalharPlaylist = styled.button`
+
+   width: 200px;
+   height:40px;
+   font-size: 18px;
+   color:#fff;
+   background-color: #1F06C5;
+
+`
+
+const BotaoMostrarFormularioMusica = styled.button`
+
+   width: 200px;
+   height:40px;
+   font-size: 18px;
+   color:#fff;
+   background-color: #1F06C5;
+
+`
+
+
 
 
 class ItemPlaylist extends React.Component {
@@ -59,33 +114,31 @@ class ItemPlaylist extends React.Component {
     }
     render(){
          const musicasPlaylist = this.state.musicasPlaylist.map((musica)=>{
-             return <div key={musica.id}>
+             return <ContainerMusica key={musica.id}>
                        
-                        <p>Nome da playlist:{this.props.playlist.name}</p>
-                        <p>Nome da música :{musica.name}</p>
-                        <p>Banda/artista:{musica.artist}</p>
+                        <NomeDetalhePlaylist>Nome da música : </NomeDetalhePlaylist><p>{musica.name}</p>
+                        <NomeDetalhePlaylist>Banda/artista:  </NomeDetalhePlaylist><p> {musica.artist}</p>
                         <audio src={musica.url}  controls>
                             
                         </audio>
                         
   
   
-                    </div>
+                    </ContainerMusica>
   
          })
         return(
 
-            <div>
-                {this.props.playlist.name}
+            <ContainerPlaylist>
+                <NomePlaylist>{this.props.playlist.name}</NomePlaylist>
                 <IconeDeletar src={imagemExcluir} alt="icone excluir playlist" onClick={()=>this.deletarPlaylist(this.props.playlist.id)}/>
-                <button onClick={()=>this.mostrarDetalhesPlaylist(this.props.playlist.id)}>{this.state.itemsPlaylistMostradas? 'Esconder detalhes': 'Mostrar detalhes'}</button>
-                <button onClick ={this.adicionarMusicaNaPlaylist}>{this.state.formularioMostrado? 'Esconder Formulário': 'Mostrar Formulário'}</button>
-                {this.state.formularioMostrado ? <CadastroMusica idPlaylist={this.props.playlist.id}/>:<div></div>}
-                {this.state.itemsPlaylistMostradas? <div>{musicasPlaylist}</div>:<div></div>}   
-              
+                <BotaoDetalharPlaylist onClick={()=>this.mostrarDetalhesPlaylist(this.props.playlist.id)}>{this.state.itemsPlaylistMostradas? 'Esconder detalhes': 'Mostrar detalhes'}</BotaoDetalharPlaylist>
+                <BotaoMostrarFormularioMusica onClick ={this.adicionarMusicaNaPlaylist}>{this.state.formularioMostrado? 'Esconder Formulário': 'Mostrar Formulário'}</BotaoMostrarFormularioMusica>
+                <ContainerCadastroMusica>{this.state.formularioMostrado ? <CadastroMusica idPlaylist={this.props.playlist.id}/>:<div></div>}</ContainerCadastroMusica>
+                <ContainerItemsPlaylist>{this.state.itemsPlaylistMostradas? <div><h2>Detalhes da Playlist</h2>{musicasPlaylist}</div>:<div></div>}</ContainerItemsPlaylist>
                  
                     
-            </div>
+            </ContainerPlaylist>
         )
 
     }
