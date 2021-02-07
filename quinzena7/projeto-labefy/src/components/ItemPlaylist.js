@@ -11,6 +11,12 @@ const IconeDeletar = styled.img`
 
 `
 
+const IconeDeletarMusica = styled.img`
+  width:40px;
+  height:30px;
+
+`
+
 const ContainerPlaylist = styled.div`
      display: grid;
      grid-template-columns: 200px 200px 200px 200px  ;
@@ -19,7 +25,7 @@ const ContainerPlaylist = styled.div`
 
 const ContainerMusica = styled.div`
        display:grid;
-      grid-template-columns:180px 1fr; 
+      grid-template-columns:1fr 1fr; 
       align-items: center;
       
 
@@ -112,15 +118,30 @@ class ItemPlaylist extends React.Component {
     adicionarMusicaNaPlaylist = () =>{
         this.setState({formularioMostrado : !this.state.formularioMostrado})
     }
+
+    deletarMusica = (idPlaylist, idMusica)=>{
+        axios.delete(`https://us-central1-labenu-apis.cloudfunctions.net/labefy/playlists/${idPlaylist}/tracks/${idMusica}`,{
+            headers: {
+                Authorization:"laecio-conceicao-muyembe"
+            }
+        }).then((resposta)=>{
+            alert("Música deletada da playlist")
+            
+        }).catch(()=>{
+            alert("Não foi possível delatar música da playlist")
+        })
+
+    }
     render(){
          const musicasPlaylist = this.state.musicasPlaylist.map((musica)=>{
              return <ContainerMusica key={musica.id}>
                        
                         <NomeDetalhePlaylist>Nome da música : </NomeDetalhePlaylist><p>{musica.name}</p>
                         <NomeDetalhePlaylist>Banda/artista:  </NomeDetalhePlaylist><p> {musica.artist}</p>
-                        <audio src={musica.url}  controls>
+                        <audio src={musica.url}  controls/> <IconeDeletarMusica src={imagemExcluir} alt="icone excluir musica" onClick={()=>this.deletarMusica(this.props.playlist.id, musica.id)}/>
+                        
                             
-                        </audio>
+                        
                         
   
   

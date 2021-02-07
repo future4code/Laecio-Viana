@@ -24,7 +24,16 @@ const FormularioCadastroPlaylist = styled.div`
      grid-template-columns: 140px 1fr 1fr;
      column-gap:15px;
      margin-top:30px;
-     font-size: 18px;
+     
+     label {
+         font-weight:bold;
+         font-size:17px;
+     }
+
+     input{
+
+         width:200px;
+     }
 
 `
 

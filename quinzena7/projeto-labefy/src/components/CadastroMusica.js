@@ -1,5 +1,33 @@
 import React from 'react'
 import axios from 'axios'
+import styled from 'styled-components'
+
+const ContainerFormularioMusica = styled.div`
+    display: flex;
+    flex-direction: column;
+    row-gap:30px;
+
+    div {
+        display: grid;
+        grid-template-columns:1fr 1fr;
+    }
+
+    label {
+        font-size:17px;
+        font-weight:bold;
+    }
+
+
+`
+
+const BotaoCadastrarMusica = styled.button`
+   width: 200px;
+   height:40px;
+   font-size: 18px;
+   color:#fff;
+   background-color: #1F06C5;
+   
+`
 
 class CadastroMusica extends React.Component {
 
@@ -52,7 +80,7 @@ class CadastroMusica extends React.Component {
 }
     render(){
         return (
-            <div>
+            <ContainerFormularioMusica>
                 <h2>Cadastro de Música</h2>
                 <div>
                     <label>Nome da Música:</label>
@@ -66,8 +94,8 @@ class CadastroMusica extends React.Component {
                     <label>Link da Música:</label>
                     <input type="text" placeholder="Informe a url da música" onChange={this.mudarUrlMusica} value ={this.state.inputUrlMusica}/>
                 </div>
-                <button onClick={()=>this.cadastrarMusica(this.props.idPlaylist)}>Adicionar Música </button>
-            </div>
+                <BotaoCadastrarMusica onClick={()=>this.cadastrarMusica(this.props.idPlaylist)}>Adicionar Música </BotaoCadastrarMusica>
+            </ContainerFormularioMusica>
         )
     }
 }
