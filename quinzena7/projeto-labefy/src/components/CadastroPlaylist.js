@@ -1,5 +1,37 @@
 import React from 'react'
 import axios from 'axios'
+import styled from 'styled-components'
+
+const ContainerFormularioPlaylist = styled.div`
+     display: flex;
+     justify-content: center;
+     flex-direction: column;
+     align-items: center;
+     background-color: #0BF19D;
+     
+    
+    
+`
+
+const FormularioCadastroPlaylist = styled.div`
+     
+     display:grid;
+     grid-template-columns: 140px 1fr 1fr;
+     column-gap:15px;
+     margin-top:30px;
+     font-size: 18px;
+
+`
+
+const BotaoCadastrarPlaylist = styled.button`
+
+   width: 110px;
+   height:30px;
+   font-size: 18px;
+   color:#fff;
+   background-color: #1F06C5;
+
+`
 
 class CadastroPlaylist extends React.Component {
 
@@ -35,19 +67,19 @@ class CadastroPlaylist extends React.Component {
   render(){
 
     return (
-      <div>
-          <hr/>
+      <ContainerFormularioPlaylist>
+          
           <h1>Cadastro de Playlist</h1>
 
-          <form>
-              <div>
+          <FormularioCadastroPlaylist>
+              
                   <label>Nome da Playlist:</label>
                   <input type="text" placeholder="Informe a sua playlist" value={this.state.inputNomePlaylist} onChange={this.onChangeNomePlaylist}/>
                   
-              </div>
-          </form>
-          <button onClick={()=> this.criarPlaylist(this.state.inputNomePlaylist)}>Cadastrar</button><hr/>
-      </div>
+              
+                  <BotaoCadastrarPlaylist onClick={()=> this.criarPlaylist(this.state.inputNomePlaylist)}>Cadastrar</BotaoCadastrarPlaylist>
+          </FormularioCadastroPlaylist>
+      </ContainerFormularioPlaylist>
     );
   }
 }

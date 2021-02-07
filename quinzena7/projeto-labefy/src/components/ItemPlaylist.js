@@ -67,7 +67,7 @@ class ItemPlaylist extends React.Component {
                         <audio src={musica.url}  controls>
                             
                         </audio>
-                        <hr/>
+                        
   
   
                     </div>

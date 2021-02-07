@@ -3,6 +3,12 @@ import axios from 'axios'
 import styled from 'styled-components'
 import ItemPlaylist from './ItemPlaylist'
 
+const ContainerListaPlaylists = styled.div`
+     background-color: #0BF19D;
+
+
+`
+
 
 class ListaPlaylist extends React.Component{
 
@@ -61,13 +67,13 @@ class ListaPlaylist extends React.Component{
        
         
         return (
-            <div>
+            <ContainerListaPlaylists>
                 <h1>Lista de Playlists</h1>
                 {this.state.quantidadePlaylists === 0 ?<h3>Não possui playlist cadastrada</h3>:<ul>{playlistsRenderizadas}</ul>}
                         
                 
-                <hr/>
-            </div>
+               
+            </ContainerListaPlaylists>
         )
     }
 }
