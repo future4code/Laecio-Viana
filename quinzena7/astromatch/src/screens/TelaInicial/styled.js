@@ -5,4 +5,8 @@ export const ContainerTelaInicial = styled.div`
     width: 30vw;
     margin: 30px auto;
     border: 1px solid #000;
+    display: grid;
+    grid-template-rows: 1fr 5fr 1fr;
+   
+    
 `
