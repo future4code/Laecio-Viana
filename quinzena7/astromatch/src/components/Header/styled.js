@@ -12,9 +12,10 @@ export const ContainerHeader = styled.div`
     justify-content: space-between;
     align-items: center;
     padding:0 15px;
+    background-color: #fca103;
      
 `
 
 export const TituloAplicacao = styled.h2`
-
+     color: #fff;
 `
