@@ -1,10 +1,13 @@
 import React from 'react'
+import {ContainerTelaInicial}  from './styled'
 
 function TelaInicial() {
   return (
-    <div>
-        <h2>Tela Inicial</h2>
-    </div>
+    <ContainerTelaInicial>
+       
+     
+
+    </ContainerTelaInicial>
   );
 }
 
