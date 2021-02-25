@@ -1,9 +1,9 @@
 import React from 'react'
 
-function TelaMatches() {
+function TelaMatches(props) {
   return (
     <div>
-        <h2>Tela Matches</h2>
+        <h2 onClick={props.voltaTela}>Tela Matches</h2>
     </div>
   );
 }

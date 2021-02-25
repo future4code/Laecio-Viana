@@ -4,11 +4,11 @@ import Header from '../../components/Header/Header'
 import CardInformacoesPessoa from '../../components/CardInformacoesPessoa/CardInformacoesPessoa'
 import Footer from '../../components/Footer/Footer'
 
-function TelaInicial() {
+function TelaInicial(props) {
   return (
     <ContainerTelaInicial>
        
-         <Header/>
+         <Header mudaTela={props.mudaTela}/>
          <CardInformacoesPessoa/>
          <Footer/>
 
