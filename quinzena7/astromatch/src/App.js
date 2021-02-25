@@ -5,7 +5,7 @@ import TelaMatches from './screens/TelaMatches/TelaMatches'
 import GlobalStyle from './styles/global'
 
 function App() {
-
+  
   const[telaAtual, setTelaAtual] = useState("tela escolha")
 
   const mostrarTela = ()=>{

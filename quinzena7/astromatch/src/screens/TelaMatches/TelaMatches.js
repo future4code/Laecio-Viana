@@ -1,10 +1,12 @@
 import React from 'react'
+import {ContainerTelaMatches}  from './styled'
+import Header from '../../components/Header/Header'
 
 function TelaMatches(props) {
   return (
-    <div>
-        <h2 onClick={props.voltaTela}>Tela Matches</h2>
-    </div>
+    <ContainerTelaMatches>      
+        <Header voltaTela={props.voltaTela}/>
+    </ContainerTelaMatches>
   );
 }
 
