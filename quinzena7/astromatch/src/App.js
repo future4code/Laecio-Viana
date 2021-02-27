@@ -19,7 +19,7 @@ function App() {
          .catch(erro =>{
              console.log(erro)
          })
-    }, [BASE_URL])
+    }, [])
 
   const darMatchOuDescartar = () => {
         setEscolha(true)

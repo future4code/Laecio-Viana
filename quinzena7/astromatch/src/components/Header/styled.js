@@ -19,3 +19,9 @@ export const ContainerHeader = styled.div`
 export const TituloAplicacao = styled.h2`
      color: #fff;
 `
+
+export const BotaoLimparMatches = styled.button`
+     height: 30px;
+     background-color:#05B83B;
+     color:#fff;
+`

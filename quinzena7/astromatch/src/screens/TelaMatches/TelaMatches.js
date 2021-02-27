@@ -11,8 +11,7 @@ function TelaMatches(props) {
 
      axios.get(`${BASE_URL}/matches`)
      .then(resposta =>{
-       setMatches(resposta.data.matches)  
-       
+       setMatches(resposta.data.matches)       
        
      })
      .catch(erro =>{
@@ -27,7 +26,7 @@ function TelaMatches(props) {
         <Header voltaTela={props.voltaTela}/>
         <ListaMatches>
             {matches.map((match)=>{
-               return <Match>
+               return <Match key={match.id}>
                          <ImagemPessoaMatch src={match.photo}/>                 
                          <NomePessoaMatch>{match.name}</NomePessoaMatch>                         
                       </Match>
