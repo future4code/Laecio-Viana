@@ -9,8 +9,8 @@ function TelaInicial(props) {
     <ContainerTelaInicial>
        
          <Header mudaTela={props.mudaTela}/>
-         <CardInformacoesPessoa/>
-         <Footer/>
+         <CardInformacoesPessoa perfil={props.perfil}/>
+         <Footer escolha={props.escolha} idPessoa = {props.idPessoa}/>
 
     </ContainerTelaInicial>
   );

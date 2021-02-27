@@ -11,7 +11,8 @@ function TelaMatches(props) {
 
      axios.get(`${BASE_URL}/matches`)
      .then(resposta =>{
-       setMatches(resposta.data.matches)     
+       setMatches(resposta.data.matches)  
+       
        
      })
      .catch(erro =>{
