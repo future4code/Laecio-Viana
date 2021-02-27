@@ -13,8 +13,9 @@ export const ContainerCardInformacaoPessoa = styled.div`
 
 export const ImagemPerfil = styled.img`
      width:80%;
-     height: 70%; 
-     padding-top:10px;   
+     height: 300px; 
+     padding-top:10px;
+     object-fit: fill;   
      
 `
 

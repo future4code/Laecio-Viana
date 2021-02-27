@@ -9,7 +9,8 @@ const Header = (props) =>{
 
     const limparListaMatches = () => {
          axios.put(`${BASE_URL}/clear`).then(resposta =>{
-             console.log(resposta)
+            // console.log(resposta)
+            props.limpar()
             
             }
           )
@@ -17,7 +18,7 @@ const Header = (props) =>{
     }
     return (
           <ContainerHeader>
-               {props.mudaTela? <ImagemLogo src={imagem} onClick={props.mudaTela}/>:<ImagemLogo src={imagemRetorno} onClick={props.voltaTela}/>} 
+               {props.mudaTela? <ImagemLogo src={imagem} onClick={props.mudaTela}/>:<ImagemLogo src={imagemRetorno} onClick={props.voltaTela} />} 
                <BotaoLimparMatches onClick={limparListaMatches}>Limpar Matches</BotaoLimparMatches>
                <TituloAplicacao>AstroMatch</TituloAplicacao>
           </ContainerHeader>
