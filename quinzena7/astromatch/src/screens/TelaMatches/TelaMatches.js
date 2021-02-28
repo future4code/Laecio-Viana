@@ -7,22 +7,21 @@ import {BASE_URL} from '../../constants/urls'
 function TelaMatches(props) {
   
   const[matches, setMatches] = useState([])
+
   useEffect(()=>{
 
      axios.get(`${BASE_URL}/matches`)
      .then(resposta =>{
-       setMatches(resposta.data.matches)
-      
-       props.mostraPessoa()       
+
+       setMatches(resposta.data.matches)      
+       props.mostraPerfilPessoa()       
        
      })
      .catch(erro =>{
        console.log(erro)
      })
      
-  },[])  
-
-  
+  },[])    
 
   return ( 
     

@@ -24,5 +24,6 @@ export const ImagemPessoaMatch = styled.img`
              
 `
 export const NomePessoaMatch = styled.div`
+     margin-left: 15px;
 
 `

@@ -21,6 +21,11 @@ export const ImagemPerfil = styled.img`
 
 export const Apresentacao = styled.div`
     padding-top: 10px;
+
+    span {
+        font-size: 19px;
+        color:#fff;
+    }
 `
 
 export const Descricao = styled.div`

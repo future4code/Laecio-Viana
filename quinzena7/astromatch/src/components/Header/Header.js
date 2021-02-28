@@ -8,12 +8,11 @@ import axios from 'axios'
 const Header = (props) =>{  
 
     const limparListaMatches = () => {
-         axios.put(`${BASE_URL}/clear`).then(resposta =>{
-            // console.log(resposta)
-            props.limpar()
-            
-            }
-          )
+
+         axios.put(`${BASE_URL}/clear`)
+         .then(() =>{            
+              props.limpaMatches()
+          })
          .catch(erro =>{console.log(erro)})
     }
     return (

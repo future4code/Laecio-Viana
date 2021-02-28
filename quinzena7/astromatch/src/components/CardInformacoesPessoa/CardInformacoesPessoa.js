@@ -1,17 +1,13 @@
-import React, {useEffect, useState} from 'react'
+import React from 'react'
 import {ContainerCardInformacaoPessoa, ImagemPerfil, Descricao, Apresentacao} from './styled'
-import axios from 'axios'
-import {BASE_URL} from '../../constants/urls'
 
-
-const CardInformacoesPessoa = (props) =>{
-          
+const CardInformacoesPessoa = (props) =>{      
 
     return (
           <ContainerCardInformacaoPessoa>
-               <ImagemPerfil src={props.perfil.photo} alt="Foto da pessoa"/>
-               <Apresentacao>{props.perfil.name} , {props.perfil.age}</Apresentacao>
-               <Descricao>{props.perfil.bio}</Descricao>
+               <ImagemPerfil src={props.perfilPessoa.photo} alt="Foto da pessoa"/>
+               <Apresentacao><span>{props.perfilPessoa.name}</span> , {props.perfilPessoa.age}</Apresentacao>
+               <Descricao>{props.perfilPessoa.bio}</Descricao>
           </ContainerCardInformacaoPessoa>           
           
     )
