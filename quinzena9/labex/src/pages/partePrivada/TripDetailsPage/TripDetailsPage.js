@@ -1,10 +1,20 @@
 import React from 'react'
+import {useHistory} from 'react-router-dom'
+import {ContainerTripDetailsPage} from './styled'
+import Header from '../../../components/Header/Header'
+
 
 function TripDetailsPage() {
+  const history = useHistory()
+
+  const goToLoginPage = () =>{
+      history.push('/login')
+  }
+  
   return (
-    <div>
-         <h1>página detalhes viagem</h1>
-    </div>
+    <ContainerTripDetailsPage> 
+       <Header redirectPage={goToLoginPage} titleRedirect={"Logout"}/>        
+    </ContainerTripDetailsPage>
   );
 }
 
