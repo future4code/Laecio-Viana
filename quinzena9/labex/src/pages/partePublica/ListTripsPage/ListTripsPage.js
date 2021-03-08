@@ -1,8 +1,9 @@
 import React from 'react'
 import {useHistory} from 'react-router-dom'
-import {ContainerListTripsPage, MainListTripsPage} from './styled'
+import {ContainerListTripsPage} from './styled'
 import Header from '../../../components/Header/Header'
 import Footer from '../../../components/Footer/Footer'
+import Main from '../../../components/Main/Main'
 
 
 function ListTripsPage() {
@@ -18,9 +19,9 @@ function ListTripsPage() {
   return (
     <ContainerListTripsPage>
          <Header redirectPage={goToHome} titleRedirect={"Home"}/>
-         <MainListTripsPage>
+         <Main>
              <h2 onClick ={goToForm}>Candidatar a Viagem</h2>
-         </MainListTripsPage>
+         </Main>
                 
          <Footer/>
          

@@ -1,9 +1,9 @@
 import React from 'react'
 import {useHistory} from 'react-router-dom'
-import {ContainerTripDetailsPage, MainTripDetailsPage} from './styled'
+import {ContainerTripDetailsPage} from './styled'
 import Header from '../../../components/Header/Header'
 import Footer from '../../../components/Footer/Footer'
-
+import Main from '../../../components/Main/Main'
 
 function TripDetailsPage() {
   const history = useHistory()
@@ -11,13 +11,13 @@ function TripDetailsPage() {
   const goToLoginPage = () =>{
       history.push('/login')
   }
-  
+
   return (
     <ContainerTripDetailsPage> 
        <Header redirectPage={goToLoginPage} titleRedirect={"Logout"}/>  
-       <MainTripDetailsPage>
+       <Main>
             <h2>Lista Viagens</h2>
-       </MainTripDetailsPage>
+       </Main>
        <Footer/>      
     </ContainerTripDetailsPage>
   );
