@@ -1,8 +1,8 @@
 import React from 'react'
 import {useHistory} from 'react-router-dom'
-import {ContainerTripPage} from './styled'
+import {ContainerTripPage, MainCreateTripPage} from './styled'
 import Header from '../../../components/Header/Header'
-
+import Footer from '../../../components/Footer/Footer'
 
 function CreateTripPage() {
   const history = useHistory()
@@ -17,7 +17,11 @@ function CreateTripPage() {
   return (
     <ContainerTripPage>
          <Header redirectPage={goToLoginPage} titleRedirect={"Logout"}/>
-         <button onClick={goToTripDetailsPage}>Detalhar</button>
+         <MainCreateTripPage>
+
+         <h2 onClick={goToTripDetailsPage}>Detalhar</h2>
+         </MainCreateTripPage>
+         <Footer/>
         
     </ContainerTripPage>
   );

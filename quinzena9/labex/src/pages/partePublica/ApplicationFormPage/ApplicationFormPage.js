@@ -1,7 +1,9 @@
 import React from 'react'
 import {useHistory} from 'react-router-dom'
 import Header from '../../../components/Header/Header'
-import {ContainerApplicationFormPage} from './styled'
+import {ContainerApplicationFormPage, MainApplicationFormPage} from './styled'
+import Footer from '../../../components/Footer/Footer'
+
 
 function ApplicationFormPage() {
   const history = useHistory()
@@ -12,7 +14,11 @@ function ApplicationFormPage() {
 
   return (
     <ContainerApplicationFormPage>
-        <Header redirectPage={goToHome} titleRedirect={"Home"}/>         
+        <Header redirectPage={goToHome} titleRedirect={"Home"}/>
+        <MainApplicationFormPage>
+            <h2>Formulário</h2>
+        </MainApplicationFormPage>
+        <Footer/>         
     </ContainerApplicationFormPage>
   );
 }

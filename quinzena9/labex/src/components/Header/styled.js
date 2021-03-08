@@ -1,21 +1,22 @@
 import  styled  from 'styled-components'
 
 export const ContainerHeader = styled.div`
-       height:80px;
+       height:70px;
        display:flex;
        justify-content: space-between;
        align-items: center;
        border: 1px solid #000;
+       background-color: #765;
+       position: fixed;
+       top: 0;
+       width: 100vw;
 
        h2{
-           margin-right: 20px;
-       }
-
-        
+           margin-right: 35px;
+       }        
 `
-
 export const ImageLogo = styled.img`
-       height:60px;
+       height:55px;
        width:70px;
        margin-left: 20px;
 `

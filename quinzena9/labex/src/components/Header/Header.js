@@ -1,4 +1,3 @@
-//import React,{useState, useEffect} from 'react'
 import {ContainerHeader, ImageLogo} from './styled'
 import logo from '../../assets/images/espaco.jpg'
 import {useRedirectPage} from '../../routers/useRedirectPage'
