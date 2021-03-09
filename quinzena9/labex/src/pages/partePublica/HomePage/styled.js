@@ -5,5 +5,12 @@ export const ContainerHomePage = styled.div`
        height:100vh;       
 `
 
+export const ImageSpace = styled.img`
+         width: 300px;
+         height: 200px;
+`
+
+
+
 
 

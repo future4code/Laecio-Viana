@@ -4,18 +4,16 @@ import Header from '../../../components/Header/Header'
 import {ContainerApplicationFormPage} from './styled'
 import Footer from '../../../components/Footer/Footer'
 import Main from '../../../components/Main/Main'
+import {goToHome} from '../../../routers/Coordinator'
 
 
 function ApplicationFormPage() {
-  const history = useHistory()
 
-  const goToHome = () =>{
-       history.push('/')
-  }  
+  const history = useHistory() 
 
   return (
     <ContainerApplicationFormPage>
-        <Header redirectPage={goToHome} titleRedirect={"Home"}/>
+        <Header redirectPage={()=>goToHome(history)} titleRedirect={"Home"}/>
         <Main>
             <h2>Formulário</h2>
         </Main>

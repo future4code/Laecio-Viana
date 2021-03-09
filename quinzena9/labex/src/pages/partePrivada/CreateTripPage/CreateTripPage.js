@@ -4,23 +4,16 @@ import {ContainerTripPage} from './styled'
 import Header from '../../../components/Header/Header'
 import Footer from '../../../components/Footer/Footer'
 import Main from '../../../components/Main/Main'
+import {goToLoginPage, goToTripDetailsPage} from '../../../routers/Coordinator'
 
 function CreateTripPage() {
   const history = useHistory()
 
-  const goToLoginPage = () =>{
-      history.push('/login')
-  }
-
-  const goToTripDetailsPage = () =>{
-    history.push('/trips/details')
-  }
   return (
     <ContainerTripPage>
-         <Header redirectPage={goToLoginPage} titleRedirect={"Logout"}/>
+         <Header redirectPage={()=>goToLoginPage(history)} titleRedirect={"Logout"}/>
          <Main>
-
-         <h2 onClick={goToTripDetailsPage}>Detalhar</h2>
+            <h2 onClick={()=>goToTripDetailsPage(history)}>Detalhar</h2>
          </Main>
          <Footer/>
         

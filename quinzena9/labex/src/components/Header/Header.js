@@ -1,6 +1,6 @@
 import {ContainerHeader, ImageLogo} from './styled'
 import logo from '../../assets/images/espaco.jpg'
-import {useRedirectPage} from '../../routers/useRedirectPage'
+import {useRedirectPage} from '../../hooks/useRedirectPage'
 
 function Header (props){        
     const [name, changePage] = useRedirectPage(props.titleRedirect, props.redirectPage)      

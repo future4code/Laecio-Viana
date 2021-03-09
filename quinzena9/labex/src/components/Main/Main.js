@@ -1,13 +1,12 @@
 import styled from 'styled-components'
 
 const Main = styled.div`
-       background-color:#444;
+       background-color:#fff;      
        width:100vw;
        height:90vh;      
       
-       h2 {
-              color: #fff;
-              padding: 100px 30px;
+       h2 {              
+          padding:  70px 30px 10px;
        }
 `
 export default Main
