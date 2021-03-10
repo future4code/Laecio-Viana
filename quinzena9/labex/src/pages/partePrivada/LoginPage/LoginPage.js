@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import {useHistory} from 'react-router-dom'
 import Header from '../../../components/Header/Header'
-import {ContainerLoginPage} from './styled'
+import {ContainerLoginPage, FormContainer, InputForm, ButtonLogin, Form} from './styled'
 import Footer from '../../../components/Footer/Footer'
 import Main from '../../../components/Main/Main'
 import {goToCreateTripPage, goToHome} from '../../../routers/Coordinator'
@@ -42,13 +42,20 @@ function LoginPage() {
     <ContainerLoginPage>                  
          <Header redirectPage={()=>goToHome(history)} titleRedirect={"Home"}/>
          <Main>            
-            <div>
-                <label>Email</label>
-                <input type={'email'} placeholder="Digite seu Email" value={email} onChange={onChangeEmail}/>
-                <label>Senha</label>
-                <input type={'password'} placeholder="Digite sua Senha" value={password} onChange={onChangePassword}/>
-                <button onClick={onSubmit}>Entrar</button>
-            </div>
+            <FormContainer>
+                <h1>Login</h1>
+                <Form>
+                     <InputForm>
+                           <label>Email</label>
+                           <input type={'email'} placeholder="Digite seu Email" value={email} onChange={onChangeEmail}/>
+                     </InputForm>
+                     <InputForm>
+                           <label>Senha</label>
+                           <input type={'password'} placeholder="Digite sua Senha" value={password} onChange={onChangePassword}/>
+                     </InputForm>
+                     <ButtonLogin onClick={onSubmit}>Entrar</ButtonLogin>
+                </Form>
+            </FormContainer>
          </Main>
          <Footer/>
     </ContainerLoginPage>
