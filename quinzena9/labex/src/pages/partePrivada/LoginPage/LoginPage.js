@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import {useHistory} from 'react-router-dom'
 import Header from '../../../components/Header/Header'
 import {ContainerLoginPage} from './styled'
@@ -21,13 +21,22 @@ function LoginPage() {
           password
        }
 
-       axios.post(`${BASE_URL}/login`, body).then(response =>{
+       axios.post(`${BASE_URL}/login`, body).then((response) =>{
              localStorage.setItem("token", response.data.token)
              goToCreateTripPage(history)
-       }).catch(error =>{
-         console.log(error)
+       }).catch((error) =>{
+          alert(error)
        })
   }
+
+  useEffect(()=>{
+       const token = localStorage.getItem("token")
+
+       if (token){
+             goToCreateTripPage(history) 
+       }
+
+  }, [history])
 
   return (
     <ContainerLoginPage>                  

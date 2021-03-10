@@ -22,4 +22,17 @@ export const goToCreateTripPage = (history) =>{
 
 export const goToTripDetailsPage = (history) =>{
     history.push('/trips/details')
-  }
+}
+
+export const replaceToLoginPage = (history) =>{
+    history.replace('/login')
+}
+
+export const logout = (history) =>{
+      localStorage.removeItem("token")
+      const token = localStorage.getItem("token")
+      if (!token){
+        replaceToLoginPage(history)
+    }
+      
+}
