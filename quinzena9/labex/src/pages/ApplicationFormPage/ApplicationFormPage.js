@@ -7,7 +7,7 @@ import Main from '../../components/Main/Main'
 import {goToHome} from '../../routers/Coordinator'
 
 
-function ApplicationFormPage() {
+function ApplicationFormPage(props) {
 
   const history = useHistory() 
 
@@ -16,6 +16,7 @@ function ApplicationFormPage() {
         <Header redirectPage={()=>goToHome(history)} titleRedirect={"Home"}/>
         <Main>
             <h2>Formulário</h2>
+            <p>{props.idViagem}</p>
         </Main>
         <Footer/>         
     </ContainerApplicationFormPage>
