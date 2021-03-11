@@ -1,11 +1,11 @@
 import React from 'react'
 import {ContainerHomePage, ImageSpace} from './styled'
 import {useHistory} from 'react-router-dom'
-import Header from  '../../../components/Header/Header'
-import Footer from '../../../components/Footer/Footer'
-import Main from '../../../components/Main/Main'
-import {goToLoginPage,goToListTripsPage} from '../../../routers/Coordinator'
-import imagemFundo from '../../../assets/images/espaco1.jpg'
+import Header from  '../../components/Header/Header'
+import Footer from '../../components/Footer/Footer'
+import Main from '../../components/Main/Main'
+import {goToLoginPage,goToListTripsPage} from '../../routers/Coordinator'
+import imagemFundo from '../../assets/images/espaco1.jpg'
 
 
 function HomePage() {

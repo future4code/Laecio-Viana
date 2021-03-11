@@ -1,8 +1,8 @@
 import React from 'react'
 import {ContainerErrorPage} from './styled'
-import Header from '../../../components/Header/Header'
-import Footer from '../../../components/Footer/Footer'
-import Main from '../../../components/Main/Main'
+import Header from '../../components/Header/Header'
+import Footer from '../../components/Footer/Footer'
+import Main from '../../components/Main/Main'
 
 function ErrorPage() {  
   return (

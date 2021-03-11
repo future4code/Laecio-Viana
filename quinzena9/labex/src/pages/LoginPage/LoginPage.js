@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react'
 import {useHistory} from 'react-router-dom'
-import Header from '../../../components/Header/Header'
+import Header from '../../components/Header/Header'
 import {ContainerLoginPage, FormContainer, InputForm, ButtonLogin, Form} from './styled'
-import Footer from '../../../components/Footer/Footer'
-import Main from '../../../components/Main/Main'
-import {goToCreateTripPage, goToHome} from '../../../routers/Coordinator'
-import useInput from '../../../hooks/useInput'
-import {BASE_URL} from '../../../constants/urls'
+import Footer from '../../components/Footer/Footer'
+import Main from '../../components/Main/Main'
+import {goToCreateTripPage, goToHome} from '../../routers/Coordinator'
+import useInput from '../../hooks/useInput'
+import {BASE_URL} from '../../constants/urls'
 import axios from 'axios'
 
 function LoginPage() {
@@ -15,7 +15,9 @@ function LoginPage() {
   const[email, onChangeEmail] = useInput("")
   const[password, onChangePassword] = useInput("")  
 
-  const onSubmit = ()=>{
+  const onSubmitForm = (event)=>{
+
+      event.preventDefault()
        const body = {
           email,
           password
@@ -44,7 +46,7 @@ function LoginPage() {
          <Main>            
             <FormContainer>
                 <h1>Login</h1>
-                <Form>
+                <Form onSubmit={onSubmitForm}>
                      <InputForm>
                            <label>Email</label>
                            <input type={'email'} placeholder="Digite seu Email" value={email} onChange={onChangeEmail}/>
@@ -53,7 +55,7 @@ function LoginPage() {
                            <label>Senha</label>
                            <input type={'password'} placeholder="Digite sua Senha" value={password} onChange={onChangePassword}/>
                      </InputForm>
-                     <ButtonLogin onClick={onSubmit}>Entrar</ButtonLogin>
+                     <ButtonLogin>Entrar</ButtonLogin>
                 </Form>
             </FormContainer>
          </Main>

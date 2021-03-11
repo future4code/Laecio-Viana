@@ -1,10 +1,10 @@
 import React from 'react'
 import {useHistory} from 'react-router-dom'
-import Header from '../../../components/Header/Header'
+import Header from '../../components/Header/Header'
 import {ContainerApplicationFormPage} from './styled'
-import Footer from '../../../components/Footer/Footer'
-import Main from '../../../components/Main/Main'
-import {goToHome} from '../../../routers/Coordinator'
+import Footer from '../../components/Footer/Footer'
+import Main from '../../components/Main/Main'
+import {goToHome} from '../../routers/Coordinator'
 
 
 function ApplicationFormPage() {

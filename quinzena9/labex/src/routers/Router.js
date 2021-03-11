@@ -1,11 +1,11 @@
 import React from 'react'
-import HomePage from '../pages/partePublica/HomePage/HomePage'
-import CreateTripPage from '../pages/partePrivada/CreateTripPage/CreateTripPage'
-import ApplicationFormPage from '../pages/partePublica/ApplicationFormPage/ApplicationFormPage'
-import ListTripsPage from '../pages/partePublica/ListTripsPage/ListTripsPage'
-import LoginPage from '../pages/partePrivada/LoginPage/LoginPage'
-import TripDetailsPage from '../pages/partePrivada/TripDetailsPage/TripDetailsPage'
-import ErrorPage from '../pages/partePublica/ErrorPage/ErrorPage'
+import HomePage from '../pages/HomePage/HomePage'
+import CreateTripPage from '../pages/CreateTripPage/CreateTripPage'
+import ApplicationFormPage from '../pages/ApplicationFormPage/ApplicationFormPage'
+import ListTripsPage from '../pages/ListTripsPage/ListTripsPage'
+import LoginPage from '../pages/LoginPage/LoginPage'
+import TripDetailsPage from '../pages/TripDetailsPage/TripDetailsPage'
+import ErrorPage from '../pages/ErrorPage/ErrorPage'
 import {BrowserRouter, Route, Switch} from 'react-router-dom'
 
 
