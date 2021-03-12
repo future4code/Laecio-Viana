@@ -9,4 +9,6 @@ export const ContainerFooter = styled.div`
        justify-content: center;
        align-items:center;
        color: #fff;
+       margin-top: 100px;
+       
 `
