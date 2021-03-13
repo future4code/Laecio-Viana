@@ -6,7 +6,7 @@ export const ContainerTripPage = styled.div`
           
 `
 
-export const  FormContainer = styled.form`       
+export const  FormContainerTrip = styled.form`       
        width: 35vw;
        height:570px;
        border:1px solid #000;
@@ -41,7 +41,7 @@ export const InputForm = styled.div`
        }
 `
 
-export const ButtonRegister = styled.button`
+export const ButtonRegisterTrip = styled.button`
        width: 100px;
        height:30px;
        margin-top: 20px;
