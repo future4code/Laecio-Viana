@@ -1,7 +1,7 @@
 import React from 'react'
 import {useHistory} from 'react-router-dom'
 import Header from '../../components/Header/Header'
-import {ContainerApplicationFormPage,FormContainer,InputForm,ButtonLogin} from './styled'
+import {ContainerApplicationFormPage,FormContainerCandidate,InputForm,ButtonRegisterCandidate} from './styled'
 import Footer from '../../components/Footer/Footer'
 import Main from '../../components/Main/Main'
 import {goToHome} from '../../routers/Coordinator'
@@ -16,7 +16,7 @@ function ApplicationFormPage() {
   const[profession, onChangeProfession] = useInput('')
   const[textDescription, onChangeTextDescription] = useInput('')
 
-  const submeter = (event) =>{
+  const onSubmitCandidate = (event) =>{
           event.preventDefault()
           alert("deu certo")
   }
@@ -26,7 +26,7 @@ function ApplicationFormPage() {
     <ContainerApplicationFormPage>
         <Header redirectPage={()=>goToHome(history)} titleRedirect={"Home"}/>
         <Main>           
-            <FormContainer onSubmit={submeter}>
+            <FormContainerCandidate onSubmit={onSubmitCandidate}>
                 <h1>Formulário</h1>
                 
                      <InputForm>
@@ -60,8 +60,8 @@ function ApplicationFormPage() {
                                 <option value="">país</option>
                            </select>
                      </InputForm>
-                     <ButtonLogin>Entrar</ButtonLogin>                
-            </FormContainer>
+                     <ButtonRegisterCandidate>Candidatar</ButtonRegisterCandidate>                
+            </FormContainerCandidate>
             
         </Main>
         <Footer/>         

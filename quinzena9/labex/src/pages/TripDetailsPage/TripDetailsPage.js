@@ -56,9 +56,37 @@ function TripDetailsPage() {
                               <button onClick={()=>showTrip(trip.id) }>Detalhar Viagem</button> 
                               {travel.id === trip.id? 
                                       <Trip>
-                                        <p>lll {travel.name}</p>
-                                        <p>lll </p>
-                                        <p>lll</p>
+                                        <p>Nome {travel.name}</p>
+                                        <p>planeta {travel.planet} </p>
+                                        <p>descrição {travel.description}</p>
+                                        <p>data {travel.date}</p>
+                                        <p>duração dias {travel.durationInDays}</p>
+                                        <h3>Candidatos </h3>
+                                        {travel.candidates.map((trip)=>{
+                                           return (
+                                                <div>                                                    
+                                                   <p>nome {trip.name}</p>
+                                                   <p>idade {trip.age}</p>
+                                                   <p>país {trip.country}</p>
+                                                   <p>profissão {trip.profession}</p>
+                                                   <p>explicação {trip.applicationText}</p>
+                                                   <button>Aprovar</button>
+                                                </div>
+                                           )
+                                        })}
+                                        <h3>Aprovados</h3>
+                                        {travel.approved.map((trip)=>{
+                                             return (
+                                              <div>                                                    
+                                                 <p>nome {trip.name}</p>
+                                                 <p>idade {trip.age}</p>
+                                                 <p>país {trip.country}</p>
+                                                 <p>profissão {trip.profession}</p>                                          
+                                                 
+                                              </div>
+                                         )
+                                        })}                                       
+                                        
                                       </Trip> 
                                    : <div></div>   }                                                      
                                                                                      

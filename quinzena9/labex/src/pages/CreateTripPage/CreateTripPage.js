@@ -24,7 +24,7 @@ function CreateTripPage() {
   useProtectedPage()
   
  
-  const enviar = (event) =>{
+  const onSubmitTrip = (event) =>{
         event.preventDefault()
         const body = {
               name,
@@ -52,7 +52,7 @@ function CreateTripPage() {
          <Header redirectPage={()=>logout(history)} titleRedirect={"Logout"}/>
          <Main>
             <h2 onClick={()=>goToTripDetailsPage(history)}>Detalhar</h2>
-            <FormContainerTrip onSubmit={enviar}>
+            <FormContainerTrip onSubmit={onSubmitTrip}>
                 <h1>Cadastro de Viagem</h1>
                 
                      <InputForm>

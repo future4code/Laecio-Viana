@@ -17,7 +17,7 @@ export const ItemTrip = styled.div`
       
   `  
   export const Trip = styled.div`
-  
+      
   `
  
   

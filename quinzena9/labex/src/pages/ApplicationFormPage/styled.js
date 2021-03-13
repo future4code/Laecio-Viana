@@ -5,7 +5,7 @@ export const ContainerApplicationFormPage = styled.div`
        height:100vh;      
 `
 
-export const  FormContainer = styled.form`       
+export const  FormContainerCandidate = styled.form`       
        width: 40vw;
        height:650px;
        border:1px solid #000;
@@ -40,7 +40,7 @@ export const InputForm = styled.div`
        }
 `
 
-export const ButtonLogin = styled.button`
+export const ButtonRegisterCandidate = styled.button`
        width: 100px;
        height:30px;
        margin-top: 20px;
