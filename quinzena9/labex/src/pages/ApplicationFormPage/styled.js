@@ -5,9 +5,9 @@ export const ContainerApplicationFormPage = styled.div`
        height:100vh;      
 `
 
-export const  FormContainer = styled.div`       
-       width: 35vw;
-       height:680px;
+export const  FormContainer = styled.form`       
+       width: 40vw;
+       height:650px;
        border:1px solid #000;
        margin: 80px auto; 
        display: flex;
@@ -19,17 +19,8 @@ export const  FormContainer = styled.div`
            text-align:center;
            padding:30px 0;   
        }       
-`
-      
-export const Form = styled.form`
-       display: flex;
-       justify-content: flex-start;
-       align-items:center;
-       flex-direction: column;
-       height:380px;
-       width: 30vw;
-       margin: 40px auto;
-`
+`      
+
 export const InputForm = styled.div`
        margin-bottom: 30px;
        font-size: 22px;
