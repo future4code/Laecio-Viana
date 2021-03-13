@@ -24,6 +24,10 @@ export const goToTripDetailsPage = (history) =>{
     history.push('/trips/details')
 }
 
+export const showTripDetails = (history, idTrip) =>{
+    history.push('/trips/details/'+ idTrip)
+}
+
 export const replaceToLoginPage = (history) =>{
     history.replace('/login')
 }

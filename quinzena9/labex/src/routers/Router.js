@@ -23,6 +23,9 @@ function Router() {
                 <Route exact path="/trips/details">
                    <TripDetailsPage/>
                 </Route>
+                <Route exact path="/trips/details/:idTrip">
+                   <TripDetailsPage/>
+                </Route>
                 <Route exact path="/login">
                    <LoginPage />
                 </Route>

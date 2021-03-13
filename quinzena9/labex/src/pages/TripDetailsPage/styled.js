@@ -11,10 +11,17 @@ export const ContainerTrips = styled.div`
 
 export const ItemTrip = styled.div`
       display:grid;
-      grid-template-columns:  250px 250px 1fr 1fr   ;
+      grid-template-columns:  250px 250px 1fr  ;
       justify-items: center;   
-      margin-top: 15px;       
+      margin-top: 15px;     
       
-  `   
+  `  
+  export const Trip = styled.div`
+  
+  `
+ 
+  
+  
+ 
 
 
