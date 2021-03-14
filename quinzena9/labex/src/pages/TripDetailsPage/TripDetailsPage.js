@@ -22,12 +22,12 @@ function TripDetailsPage() {
       }).catch((error)=>{
           alert(error)
       })      
-  }   
+  } 
+
   useEffect(()=>{      
-       getTrips() 
-      
+       getTrips()      
   },[]) 
-  
+
   useEffect(()=>{
     axios.get(`${BASE_URL}/trip/${pathParams.idTrip}`, header(token)).then((response)=>{
       setTravel(response.data.trip)      
@@ -35,19 +35,17 @@ function TripDetailsPage() {
         alert(error)
     })     
   },[pathParams.idTrip,token])
-  
 
   const showTrip = (idTravel) =>{     
         showTripDetails(history, idTravel)        
-  } 
-  
-  useProtectedPage()
-  
+  }
+
+  useProtectedPage() 
+
   const decideApplication = (approve, idCandidate)=>{
          const body = {
              approve
          }
-
          axios.put(`${BASE_URL}/trips/${pathParams.idTrip}/candidates/${idCandidate}/decide`,body,header(token))
          .then(()=>{
                
@@ -58,6 +56,7 @@ function TripDetailsPage() {
               })              
          })
   }
+
   const rejectCandidate = (idCandidate)=>{
        decideApplication(false, idCandidate)
   }
@@ -79,39 +78,36 @@ function TripDetailsPage() {
                               <button onClick={()=>showTrip(trip.id) }>Detalhar Viagem</button> 
                               {travel.id === trip.id? 
                                       <Trip>
-                                        <p>Nome {travel.name}</p>
-                                        <p>planeta {travel.planet} </p>
-                                        <p>descrição {travel.description}</p>
-                                        <p>data {travel.date}</p>
-                                        <p>duração dias {travel.durationInDays}</p>
-                                        <h3>Candidatos </h3>
-                                        {travel.candidates.map((trip)=>{
-                                           return (
+                                          <p>Nome {travel.name}</p>
+                                          <p>planeta {travel.planet} </p>
+                                          <p>descrição {travel.description}</p>
+                                          <p>data {travel.date}</p>
+                                          <p>duração dias {travel.durationInDays}</p>
+                                          <h3>Candidatos </h3>
+                                          {travel.candidates.map((trip)=>{
+                                            return (
+                                                  <div key={trip.id}>                                                    
+                                                    <p>nome {trip.name}</p>
+                                                    <p>idade {trip.age}</p>
+                                                    <p>país {trip.country}</p>
+                                                    <p>profissão {trip.profession}</p>
+                                                    <p>explicação {trip.applicationText}</p>
+                                                    <button onClick={()=>approveCandidate(trip.id)}>Aprovar</button>
+                                                    <button onClick={()=>rejectCandidate(trip.id)}>Rejeitar</button>
+                                                  </div>
+                                            )
+                                          })}
+                                          <h3>Aprovados</h3>
+                                          {travel.approved.map((trip)=>{
+                                              return (
                                                 <div key={trip.id}>                                                    
-                                                   <p>nome {trip.name}</p>
-                                                   <p>idade {trip.age}</p>
-                                                   <p>país {trip.country}</p>
-                                                   <p>profissão {trip.profession}</p>
-                                                   <p>explicação {trip.applicationText}</p>
-                                                   <button onClick={()=>approveCandidate(trip.id)}>Aprovar</button>
-                                                   <button onClick={()=>rejectCandidate(trip.id)}>Rejeitar</button>
-                                                </div>
-                                           )
-                                        })}
-                                        <h3>Aprovados</h3>
-                                        {travel.approved.map((trip)=>{
-                                             return (
-                                              <div key={trip.id}>                                                    
-                                                 <p>nome {trip.name}</p>
-                                                 <p>idade {trip.age}</p>
-                                                 <p>país {trip.country}</p>
-                                                 <p>profissão {trip.profession}</p>                                          
-                                                 
-                                              </div>
-                                         )
-                                        })}                                       
-                                        
-                                      </Trip> 
+                                                  <p>nome {trip.name}</p>
+                                                  <p>idade {trip.age}</p>
+                                                  <p>país {trip.country}</p>
+                                                  <p>profissão {trip.profession}</p>                  
+                                                </div>)                                          
+                                          })}    
+                                       </Trip> 
                                    : <div></div>   }                                                      
                                                                                      
                           </ItemTrip>
