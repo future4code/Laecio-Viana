@@ -15,33 +15,56 @@ function TripDetailsPage() {
   const[travel, setTravel] = useState({})  
   const pathParams = useParams()
   const token = localStorage.getItem('token')
- 
 
+  const getTrips = () =>{
+        axios.get(`${BASE_URL}/trips`).then((response)=>{
+          setTrips(response.data.trips)          
+      }).catch((error)=>{
+          alert(error)
+      })      
+  }   
+  useEffect(()=>{      
+       getTrips() 
+      
+  },[]) 
+  
   useEffect(()=>{
-    axios.get(`${BASE_URL}/trips`).then((response)=>{
-           setTrips(response.data.trips)          
-        }).catch((error)=>{
-            alert(error)
-        })
-  },[])   
+    axios.get(`${BASE_URL}/trip/${pathParams.idTrip}`, header(token)).then((response)=>{
+      setTravel(response.data.trip)      
+    }).catch((error)=>{
+        alert(error)
+    })     
+  },[pathParams.idTrip,token])
+  
 
   const showTrip = (idTravel) =>{     
-        showTripDetails(history, idTravel)         
-         
-  }  
-   
-  useEffect(()=>{
-
-    axios.get(`${BASE_URL}/trip/${pathParams.idTrip}`, header(token)).then((response)=>{
-          setTravel(response.data.trip)     
-         
-    }).catch((error)=>{
-      alert(error)
-    })   
-  },[pathParams.idTrip, token]) 
-
+        showTripDetails(history, idTravel)        
+  } 
   
   useProtectedPage()
+  
+  const decideApplication = (approve, idCandidate)=>{
+         const body = {
+             approve
+         }
+
+         axios.put(`${BASE_URL}/trips/${pathParams.idTrip}/candidates/${idCandidate}/decide`,body,header(token))
+         .then(()=>{
+               
+              axios.get(`${BASE_URL}/trip/${pathParams.idTrip}`, header(token)).then((response)=>{
+                setTravel(response.data.trip)      
+              }).catch((error)=>{
+                  alert(error)
+              })              
+         })
+  }
+  const rejectCandidate = (idCandidate)=>{
+       decideApplication(false, idCandidate)
+  }
+
+  const approveCandidate = (idCandidate) =>{
+        decideApplication(true,idCandidate)
+  }
 
   return (
     <ContainerTripDetailsPage> 
@@ -64,20 +87,21 @@ function TripDetailsPage() {
                                         <h3>Candidatos </h3>
                                         {travel.candidates.map((trip)=>{
                                            return (
-                                                <div>                                                    
+                                                <div key={trip.id}>                                                    
                                                    <p>nome {trip.name}</p>
                                                    <p>idade {trip.age}</p>
                                                    <p>país {trip.country}</p>
                                                    <p>profissão {trip.profession}</p>
                                                    <p>explicação {trip.applicationText}</p>
-                                                   <button>Aprovar</button>
+                                                   <button onClick={()=>approveCandidate(trip.id)}>Aprovar</button>
+                                                   <button onClick={()=>rejectCandidate(trip.id)}>Rejeitar</button>
                                                 </div>
                                            )
                                         })}
                                         <h3>Aprovados</h3>
                                         {travel.approved.map((trip)=>{
                                              return (
-                                              <div>                                                    
+                                              <div key={trip.id}>                                                    
                                                  <p>nome {trip.name}</p>
                                                  <p>idade {trip.age}</p>
                                                  <p>país {trip.country}</p>
