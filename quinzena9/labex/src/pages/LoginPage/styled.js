@@ -4,7 +4,7 @@ export const ContainerLoginPage = styled.div`
        width: 100vw;
        height:100vh;      
 `
-export const  FormContainer = styled.div`       
+export const  FormContainer = styled.form`       
        width: 30vw;
        height:430px;
        border:1px solid #000;
