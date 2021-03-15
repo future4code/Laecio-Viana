@@ -11,6 +11,7 @@ export const ContainerHeader = styled.div`
 
        h2{
            margin-right: 35px;
+           color:#fff;
        }        
 `
 export const ImageLogo = styled.img`

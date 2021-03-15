@@ -1,6 +1,6 @@
 import React,{useState, useEffect} from 'react'
 import {useHistory,useParams} from 'react-router-dom'
-import {ContainerTripDetailsPage, ContainerTrips, ItemTrip, Trip} from './styled'
+import {ContainerTripDetailsPage, ContainerTrips, ItemTrip, Trip, ButtonDetailTrip,CardItem,Detail,ButtonDecide} from './styled'
 import Header from '../../components/Header/Header'
 import Footer from '../../components/Footer/Footer'
 import Main from '../../components/Main/Main'
@@ -8,6 +8,7 @@ import {logout, showTripDetails} from '../../routers/Coordinator'
 import useProtectedPage from '../../hooks/useProtectedPage'
 import axios from 'axios'
 import {BASE_URL, header} from '../../constants/urls'
+import TitlePrincipal from '../../components/TitlePrincipal/TitlePrincipal'
 
 function TripDetailsPage() {
   const history = useHistory()
@@ -69,47 +70,54 @@ function TripDetailsPage() {
     <ContainerTripDetailsPage> 
        <Header redirectPage={()=>logout(history)} titleRedirect={"Logout"}/>  
        <Main>
-            <h2>Lista Viagens</h2>
-            <ContainerTrips>              
+            <TitlePrincipal>
+              <h1>Lista Viagens</h1>
+            </TitlePrincipal>
+            <ContainerTrips> 
+                            
                 {trips.map((trip)=>{
-                  return <ItemTrip key={trip.id}>
-                              <p>Nome</p>
+                  return <ItemTrip key={trip.id}>                              
+                              <p>Viagem</p>
                               <p>{trip.name}</p>
-                              <button onClick={()=>showTrip(trip.id) }>Detalhar Viagem</button> 
+                              <ButtonDetailTrip onClick={()=>showTrip(trip.id) }>Detalhar Viagem</ButtonDetailTrip> 
                               {travel.id === trip.id? 
                                       <Trip>
-                                          <p>Nome {travel.name}</p>
-                                          <p>planeta {travel.planet} </p>
-                                          <p>descrição {travel.description}</p>
-                                          <p>data {travel.date}</p>
-                                          <p>duração dias {travel.durationInDays}</p>
+                                          <h3>Detalhes</h3> 
+                                          <CardItem>
+                                              <Detail><span>nome:</span> {travel.name}</Detail>
+                                              <Detail><span>planeta:</span> {travel.planet} </Detail>
+                                              <Detail><span>descrição:</span> {travel.description}</Detail>
+                                              <Detail><span>data:</span> {travel.date}</Detail>
+                                              <Detail><span>duração dias:</span> {travel.durationInDays}</Detail>
+                                          </CardItem>
                                           <h3>Candidatos </h3>
                                           {travel.candidates.map((trip)=>{
-                                            return (
-                                                  <div key={trip.id}>                                                    
-                                                    <p>nome {trip.name}</p>
-                                                    <p>idade {trip.age}</p>
-                                                    <p>país {trip.country}</p>
-                                                    <p>profissão {trip.profession}</p>
-                                                    <p>explicação {trip.applicationText}</p>
-                                                    <button onClick={()=>approveCandidate(trip.id)}>Aprovar</button>
-                                                    <button onClick={()=>rejectCandidate(trip.id)}>Rejeitar</button>
-                                                  </div>
-                                            )
+                                              return (                                                
+                                                    <CardItem key={trip.id}>                                                    
+                                                          <Detail><span>nome:</span> {trip.name}</Detail>
+                                                          <Detail><span>idade:</span> {trip.age}</Detail>
+                                                          <Detail><span>país:</span> {trip.country}</Detail>
+                                                          <Detail><span>profissão:</span> {trip.profession}</Detail>
+                                                          <Detail><span>explicação:</span> {trip.applicationText}</Detail>
+                                                          <ButtonDecide onClick={()=>approveCandidate(trip.id)}>Aprovar</ButtonDecide>
+                                                          <ButtonDecide onClick={()=>rejectCandidate(trip.id)}>Rejeitar</ButtonDecide>
+                                                    </CardItem>
+                                              )
                                           })}
                                           <h3>Aprovados</h3>
                                           {travel.approved.map((trip)=>{
                                               return (
-                                                <div key={trip.id}>                                                    
-                                                  <p>nome {trip.name}</p>
-                                                  <p>idade {trip.age}</p>
-                                                  <p>país {trip.country}</p>
-                                                  <p>profissão {trip.profession}</p>                  
-                                                </div>)                                          
+                                                <CardItem key={trip.id}>                                                    
+                                                      <Detail><span>nome:</span> {trip.name}</Detail>
+                                                      <Detail><span>idade:</span> {trip.age}</Detail>
+                                                      <Detail><span>país:</span> {trip.country}</Detail>
+                                                      <Detail><span>profissão:</span>{trip.profession}</Detail>                  
+                                                </CardItem>)                                          
                                           })}    
                                        </Trip> 
-                                   : <div></div>   }                                                      
-                                                                                     
+                                       : <div></div>  
+                              }       
+                                                           
                           </ItemTrip>
                 })}
             </ContainerTrips>

@@ -21,11 +21,12 @@ function CreateTripPage() {
   const[planet, onChangePlanet] = useInput('')
   const token = localStorage.getItem('token')
 
-  useProtectedPage()
-  
+  useProtectedPage()  
  
   const onSubmitTrip = (event) =>{
+       
         event.preventDefault()
+
         const body = {
               name,
               durationInDays,
@@ -33,7 +34,7 @@ function CreateTripPage() {
               date,
               planet
          }
-         
+
          axios.post(`${BASE_URL}/trips`, body, header(token))
          .then((response)=>{
               alert("cadastro realizado com sucesso")
@@ -42,19 +43,15 @@ function CreateTripPage() {
          .catch((error)=>{
               console.log(error)
          })
-  }
-
- 
+  } 
   
   return (
-    <ContainerTripPage>
-         
+    <ContainerTripPage>         
          <Header redirectPage={()=>logout(history)} titleRedirect={"Logout"}/>
          <Main>
             <h2 onClick={()=>goToTripDetailsPage(history)}>Detalhar</h2>
             <FormContainerTrip onSubmit={onSubmitTrip}>
-                <h1>Cadastro de Viagem</h1>
-                
+                <h1>Cadastro de Viagem</h1>                
                      <InputForm>
                            <label>Nome da Viagem</label>
                            <input type={'text'} placeholder="nome da viagem" value={name} onChange={onChangeName}  minLength="5"required/>
@@ -69,8 +66,7 @@ function CreateTripPage() {
                      </InputForm>
                      <InputForm>
                            <label>Descrição</label>                           
-                           <input type={'text'} placeholder="descrição" value={description} onChange={onChangeDescription}  minLength="30"  required/>
-                          
+                           <input type={'text'} placeholder="descrição" value={description} onChange={onChangeDescription}  minLength="30"  required/>                          
                      </InputForm>
                      <InputForm>
                            <label>Planeta</label>
@@ -83,13 +79,10 @@ function CreateTripPage() {
                                 <option value="Júpiter">Júpiter </option>
                                 <option value="Saturno">Saturno </option>
                                 <option value="Urano">Urano</option>
-                                <option value="Netuno">Netuno </option>
-                                
+                                <option value="Netuno">Netuno </option>                                
                            </select>
-                     </InputForm>
-                     
-                     <ButtonRegisterTrip>Cadastrar</ButtonRegisterTrip>
-                
+                     </InputForm>                     
+                     <ButtonRegisterTrip>Cadastrar</ButtonRegisterTrip>                
             </FormContainerTrip>
          </Main>
          <Footer/>        

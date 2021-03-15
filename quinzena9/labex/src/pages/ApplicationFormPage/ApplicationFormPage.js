@@ -75,8 +75,7 @@ function ApplicationFormPage() {
         <Header redirectPage={()=>goToHome(history)} titleRedirect={"Home"}/>
         <Main>           
             <FormContainerCandidate onSubmit={onSubmitCandidate}>
-                <h1>Formulário</h1>
-                
+                    <h1>Formulário</h1>                
                      <InputForm>
                            <label>Nome</label>
                            <input type={'text'} placeholder="Digite seu Nome" value={form['name']} name={'name'} onChange={onChangeInput} minLength="3" required/>

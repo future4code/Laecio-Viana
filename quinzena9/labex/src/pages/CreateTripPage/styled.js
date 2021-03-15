@@ -8,7 +8,7 @@ export const ContainerTripPage = styled.div`
 
 export const  FormContainerTrip = styled.form`       
        width: 35vw;
-       height:570px;
+       height:500px;
        border:1px solid #000;
        margin: 80px auto; 
        display: flex;
@@ -20,8 +20,7 @@ export const  FormContainerTrip = styled.form`
            text-align:center;
            padding:30px 0;   
        }       
-`      
-
+`  
 export const InputForm = styled.div`
        margin-bottom: 20px;
        font-size: 22px;
@@ -34,13 +33,8 @@ export const InputForm = styled.div`
               font-size: 19px;
               width: 220px;
               height: 30px;              
-       }
-
-       textarea {
-              resize:none;
-       }
+       }       
 `
-
 export const ButtonRegisterTrip = styled.button`
        width: 100px;
        height:30px;

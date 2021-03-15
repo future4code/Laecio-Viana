@@ -6,7 +6,7 @@ export const ContainerLoginPage = styled.div`
 `
 export const  FormContainer = styled.div`       
        width: 30vw;
-       height:400px;
+       height:430px;
        border:1px solid #000;
        margin: 120px auto; 
        display: flex;
@@ -18,18 +18,7 @@ export const  FormContainer = styled.div`
            text-align:center;
            padding:30px 0;   
        }       
-`
-      
-export const Form = styled.form`
-       display: flex;
-       justify-content: flex-start;
-       align-items:center;
-       flex-direction: column;
-      // background-color: #567;
-       height:340px;
-       width: 30vw;
-       margin: 40px auto;
-`
+`     
 export const InputForm = styled.div`
        margin-bottom: 30px;
        font-size: 22px;
@@ -41,8 +30,7 @@ export const InputForm = styled.div`
        input {
               font-size: 19px;
               width: 260px;
-              height: 30px;
-              
+              height: 30px;              
        }
 `
 export const ButtonLogin = styled.button`
@@ -50,7 +38,6 @@ export const ButtonLogin = styled.button`
        height:30px;
        margin-top: 20px;
        font-size: 19px;
-
 `
 
 
