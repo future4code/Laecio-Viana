@@ -8,8 +8,7 @@ const comprimirString = (palavra) => {
             ultimaLetra = letra
             quantidadeLetraRepetida = 0
         }
-        quantidadeLetraRepetida += 1;
-        //novaString += letra + quantidadeLetraRepetida
+        quantidadeLetraRepetida += 1;      
     }
 
     novaString.push(ultimaLetra + quantidadeLetraRepetida)  
